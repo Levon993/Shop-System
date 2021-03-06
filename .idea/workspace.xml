@@ -1,7 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="2aec57e0-6373-4c62-a6c3-31c20ed95d6e" name="Default Changelist" comment="" />
+    <list default="true" id="2aec57e0-6373-4c62-a6c3-31c20ed95d6e" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Repositories/BrandRepository.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/Pages/Admin/Brands.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/Product.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Product.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Repositories/ProductRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Repositories/ProductRepository.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2021_03_04_154529_create_products_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2021_03_04_154529_create_products_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2021_03_04_155043_create_roles_t_able.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2021_03_04_155043_create_roles_t_able.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/1.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/1.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/2.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/2.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/3.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/3.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/4.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/4.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/5.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/5.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/Pages/Admin/CreateNewCategory.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/Pages/Admin/CreateNewCategory.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/Pages/Admin/CreateNewProduct.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/Pages/Admin/CreateNewProduct.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/Routes/router.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/Routes/router.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/Store/store.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/Store/store.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/api.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/api.php" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -12,6 +32,23 @@
     <execution>
       <executable />
     </execution>
+  </component>
+  <component name="DatabaseView">
+    <option name="SHOW_INTERMEDIATE" value="true" />
+    <option name="GROUP_DATA_SOURCES" value="true" />
+    <option name="GROUP_SCHEMA" value="true" />
+    <option name="GROUP_CONTENTS" value="false" />
+    <option name="SORT_POSITIONED" value="false" />
+    <option name="SHOW_EMPTY_GROUPS" value="false" />
+    <option name="AUTO_SCROLL_FROM_SOURCE" value="false" />
+    <option name="HIDDEN_KINDS">
+      <set />
+    </option>
+    <expand />
+    <select />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="PhpWorkspaceProjectConfiguration">
     <include_path>
@@ -133,6 +170,7 @@
     </include_path>
   </component>
   <component name="ProjectId" id="1pGAdFeU2YsRkTUPj1XoMW88kMZ" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showExcludedFiles" value="true" />
@@ -140,6 +178,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
@@ -161,6 +200,10 @@
       <TestRunner scope="XML" />
       <method v="2" />
     </configuration>
+  </component>
+  <component name="StructureViewFactory">
+    <option name="AUTOSCROLL_MODE" value="false" />
+    <option name="AUTOSCROLL_FROM_SOURCE" value="true" />
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -212,6 +255,16 @@
       <workItem from="1615041685686" duration="2286000" />
       <workItem from="1615044240461" duration="1796000" />
       <workItem from="1615046331244" duration="1791000" />
+      <workItem from="1615049816088" duration="1090000" />
+      <workItem from="1615053795539" duration="1757000" />
+      <workItem from="1615057415475" duration="1827000" />
+      <workItem from="1615059254764" duration="719000" />
+      <workItem from="1615061717030" duration="696000" />
+      <workItem from="1615062431116" duration="1815000" />
+      <workItem from="1615064267016" duration="1677000" />
+      <workItem from="1615067983494" duration="1791000" />
+      <workItem from="1615069802542" duration="1795000" />
+      <workItem from="1615071610058" duration="627000" />
     </task>
     <servers />
   </component>
@@ -219,6 +272,10 @@
     <option name="version" value="1" />
   </component>
   <component name="WindowStateProjectService">
+    <state x="446" y="168" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1615063387610">
+      <screen x="0" y="0" width="1360" height="728" />
+    </state>
+    <state x="446" y="168" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1360.728@0.0.1360.728" timestamp="1615063387610" />
     <state x="410" y="112" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1615045093713">
       <screen x="0" y="0" width="1360" height="728" />
     </state>
@@ -227,17 +284,21 @@
       <screen x="0" y="0" width="1360" height="728" />
     </state>
     <state x="410" y="120" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1360.728@0.0.1360.728" timestamp="1614955209803" />
-    <state x="307" y="199" key="NewPhpClassDialog" timestamp="1614955173739">
+    <state x="307" y="199" key="NewPhpClassDialog" timestamp="1615054700101">
       <screen x="0" y="0" width="1360" height="728" />
     </state>
-    <state x="307" y="199" key="NewPhpClassDialog/0.0.1360.728@0.0.1360.728" timestamp="1614955173739" />
-    <state x="716" y="189" key="com.intellij.ide.util.TipDialog" timestamp="1615046332640">
+    <state x="307" y="199" key="NewPhpClassDialog/0.0.1360.728@0.0.1360.728" timestamp="1615054700101" />
+    <state x="716" y="189" key="com.intellij.ide.util.TipDialog" timestamp="1615073890935">
       <screen x="0" y="0" width="1360" height="728" />
     </state>
-    <state x="716" y="189" key="com.intellij.ide.util.TipDialog/0.0.1360.728@0.0.1360.728" timestamp="1615046332640" />
-    <state x="343" y="49" width="672" height="678" key="search.everywhere.popup" timestamp="1614883557866">
+    <state x="716" y="189" key="com.intellij.ide.util.TipDialog/0.0.1360.728@0.0.1360.728" timestamp="1615073890935" />
+    <state x="-4" y="166" key="run.anything.popup" timestamp="1615057862338">
       <screen x="0" y="0" width="1360" height="728" />
     </state>
-    <state x="343" y="49" width="672" height="678" key="search.everywhere.popup/0.0.1360.728@0.0.1360.728" timestamp="1614883557866" />
+    <state x="-4" y="166" key="run.anything.popup/0.0.1360.728@0.0.1360.728" timestamp="1615057862338" />
+    <state x="343" y="49" width="672" height="678" key="search.everywhere.popup" timestamp="1615057949361">
+      <screen x="0" y="0" width="1360" height="728" />
+    </state>
+    <state x="343" y="49" width="672" height="678" key="search.everywhere.popup/0.0.1360.728@0.0.1360.728" timestamp="1615057949361" />
   </component>
 </project>

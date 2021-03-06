@@ -20,6 +20,7 @@ class CreateProductsTable extends Migration
             $table->tinyInteger('category_id')->unsigned();
             $table->string('title',255);
             $table->string('alias',255)->unique();
+            $table->tinyInteger('brand_id')->unsigned();
             $table->float('price')->default(0);
             $table->float('old_price')->default(0)->nullable();
             $table->enum('status',['0','1'])->default(1);

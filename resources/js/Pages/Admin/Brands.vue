@@ -7,7 +7,7 @@
                 gradient
 
             >
-                Добавить Товар
+                Добавить Бренд
             </vs-button></div>
         <div class="list">
 
@@ -19,25 +19,7 @@
                                 Имя
                             </vs-th>
                             <vs-th>
-                                Категория
-                            </vs-th>
-                            <vs-th>
-                                Бренд
-                            </vs-th>
-                            <vs-th>
                                 Алиас
-                            </vs-th>
-                            <vs-th>
-                                Цена
-                            </vs-th>
-                            <vs-th>
-                                Старая Цена
-                            </vs-th>
-                            <vs-th>
-                                Статус
-                            </vs-th>
-                            <vs-th>
-                                Хит продаж
                             </vs-th>
                             <vs-th>
                                 Было добавлено
@@ -53,42 +35,24 @@
                     <template #tbody>
                         <vs-tr
                             :key="i"
-                            v-for="(prd, i) in products"
-                            :data="prd"
+                            v-for="(brd, i) in brands"
+                            :data="brd"
                         >
                             <vs-td>
-                                {{ prd.title }}
+                                {{ brd.title }}
                             </vs-td>
                             <vs-td>
-                                {{prd.category ?  prd.category.title : ''}}
+                                {{brd.alias}}
                             </vs-td>
                             <vs-td>
-                                {{prd.brand ?  prd.brand.title : ''}}
-                            </vs-td>
-                            <vs-td>
-                                {{ prd.alias }}
-                            </vs-td>
-                            <vs-td>
-                                {{ prd.price }}
-                            </vs-td>
-                            <vs-td>
-                                {{ prd.old_price }}
-                            </vs-td>
-                            <vs-td>
-                                {{ prd.status }}
-                            </vs-td>
-                            <vs-td>
-                                {{ prd.hit }}
-                            </vs-td>
-                            <vs-td>
-                                {{ validDate(prd.created_at)}}
+                                {{ validDate(brd.created_at)}}
                             </vs-td>
                             <vs-td>
                                 <vs-button
 
                                     danger
                                     border
-                                    @click="destroyCategory(prd.id)"
+                                    @click="destroyBrand(brd.id)"
                                 >
                                     Удалить
                                 </vs-button
@@ -108,34 +72,17 @@
         </div>
         <div v-if="modalShow" class="modal">
             <div class="modal_body">
-                <div class="modal_header">Добавление Товара</div>
+                <div class="modal_header">Добавление Бренда</div>
                 <div class="form_control">
-                    <label for="title">Наименование Товара</label>
-                    <input id="title" v-model="product.title" type="text" placeholder="Имя Товара">
-                </div>
-
-                <div class="form_control">
-                    <label for="keywords">Ключевое слово</label>
-                    <input type="text" v-model="product.keywords" id="keywords" placeholder="Ключевое слово">
+                    <label for="title">Наименование Бренда</label>
+                    <input id="title" v-model="brand.title" type="text" placeholder="Имя Бренда">
                 </div>
                 <div class="form_control">
-                    <label for="price">Цена Товара</label>
-                    <input type="number" v-model="product.price" id="price" placeholder="Цена">
+                    <label for="alias">Алиас</label>
+                    <input type="text" v-model="brand.alias" id="alias" placeholder="Алиас">
                 </div>
                 <div class="form_control">
-                    <label for="category">Категория</label>
-                    <select id="category" v-model="product.category_id" class="parent_cat">
-                        <option v-for="(cat,i) in categories" :value="cat.id" :key="i">{{ cat.title  }}</option>
-                    </select>
-                </div>
-                <div class="form_control">
-                    <label for="brand">Бренд</label>
-                    <select id="brand" v-model="product.brand_id" class="parent_cat">
-                        <option v-for="(brd,i) in brands" :value="brd.id" :key="i">{{ brd.title  }}</option>
-                    </select>
-                </div>
-                <div class="form_control">
-                    <textarea type="text" v-model="product.description" placeholder="Описание товара"></textarea>
+                    <textarea type="text" v-model="brand.description" placeholder="Описание товара"></textarea>
                 </div>
                 <div class="form_control">
                     <input  id="ImageUpload"  class=" btn-success" type="file"/>
@@ -144,7 +91,7 @@
                 <div class="form_control buttons">
                     <vs-button
                         success
-                        @click="createNewProduct()"
+                        @click="createNewBrand()"
                         flat>
                         Добавить
                     </vs-button>
@@ -162,7 +109,6 @@
 
 </template>
 <script>
-    import axios from 'axios'
     import Index from "../../Layouts/index";
     import VueToastr from '@deveodk/vue-toastr'
     import '@deveodk/vue-toastr/dist/@deveodk/vue-toastr.css'
@@ -175,24 +121,16 @@
         data:(()=>{
             return{
                 modalShow:false,
-                product:{
-                    category_id: '',
+                brand:{
                     title:'',
                     alias:'',
-                    price:'',
-                    brand_id:'',
-                    keywords:'',
                     description:'',
                 },
-                categories: [],
-                brands:[],
-                products: []
+                brands: []
             }
         }),
         mounted() {
 
-            this.GetCategories()
-            this.getProducts()
             this.getBrands()
         },
         methods:{
@@ -200,60 +138,62 @@
             {
                 return  moment(date).format("MMM Do YYYY");
             },
-
-            async getProducts()
-            {
-                await this.$store.dispatch('PRODUCTS_ACTION');
-                const res = await this.$store.getters.PRODUCTS_GETTER;
-                this.products = res
-            },
             async getBrands()
             {
                 await this.$store.dispatch('BRAND_ACTION');
                 const res = await this.$store.getters.BRAND_GETTER;
                 this.brands = res
-                console.log(this.brands);
-            },
-            async GetCategories()
-            {
-                await this.$store.dispatch('CATEGORIES_ACTION');
-                const res = await this.$store.getters.CATEGOR_GETTER;
-                this.categories = res
-
             },
 
-          async  createNewProduct(){
+            async  createNewBrand(){
                 try {
+
                     let data = new FormData();
-                    data.append('title', this.product.title)
-                    data.append('category_id', this.product.category_id)
-                    data.append('brand_id', this.product.brand_id)
-                    data.append('alias', this.product.alias)
-                    data.append('price', this.product.price)
-                    data.append('keywords', this.product.keywords)
+                    data.append('title', this.brand.title)
+                    data.append('alias', this.brand.alias)
+                    data.append('description', this.brand.description)
                     data.append('image', ImageUpload.files[0]);
-                    await this.$store.disp/atch('PRODUCT_CREATE_ACTION', data);
+                    await this.$store.dispatch('BRAND_CREATE_ACTION', data);
                     const res = await this.$store.getters.PRODUCT_CREATE_GETTER;
+                    this.getBrands()
                     this.$toastr('add', {
                         title: 'Успешно',
-                        msg: 'Товар успешно сохранен',
-                        timeout: 3000,
+                        msg: 'Бренд Успешно Сохранен',
+                        timeout: 4000,
                         position: 'toast-top-right',
                         type: 'success',
                     })
                 }catch (e) {
                     this.$toastr('add', {
                         title: 'Что-то пошло не так',
-                        msg: 'Проверте все ли поля заполнены(Возможно проблема в отсуствии связи)',
-                        timeout: 3000,
+                        msg: 'Проверте все ли поля заполнены(Возможно отсуствие связи)',
+                        timeout: 4000,
                         position: 'toast-top-right',
-                        type: 'error',
+                        type: 'Error',
                     })
+                }
+            },
+            async destroyBrand(id){
+                if(confirm('Вы действитеьно хотите удалить бренд')) {
+                    this.brands = this.brands.filter(brd => brd.id !== id)
+                    const data = {
+                        id: id
+                    }
+                    await this.$store.dispatch('BRAND_DESTROY_ACTION',data);
+                    const res = await this.$store.getters.BRAND_DESTROY_GETTER;
+
+                    this.$toastr('add', {
+                        title: 'Информация',
+                        msg: res.message,
+                        timeout: 6000,
+                        position: 'toast-top-right',
+
+                    })
+
+
                 }
             }
         },
-
-
 
     }
 </script>
@@ -336,8 +276,8 @@
 
     #ImageUpload
     {
-       color: blue;
-       border-radius: 5px;
+        color: blue;
+        border-radius: 5px;
     }
 
 </style>

@@ -83606,7 +83606,7 @@ vue__WEBPACK_IMPORTED_MODULE_0___default.a.use(vue_router__WEBPACK_IMPORTED_MODU
     children: [{
       path: '',
       component: function component() {
-        return __webpack_require__.e(/*! import() */ 4).then(__webpack_require__.bind(null, /*! ../Pages/Home */ "./resources/js/Pages/Home.vue"));
+        return __webpack_require__.e(/*! import() */ 5).then(__webpack_require__.bind(null, /*! ../Pages/Home */ "./resources/js/Pages/Home.vue"));
       }
     }]
   }, {
@@ -83616,17 +83616,22 @@ vue__WEBPACK_IMPORTED_MODULE_0___default.a.use(vue_router__WEBPACK_IMPORTED_MODU
     children: [{
       path: '',
       component: function component() {
-        return __webpack_require__.e(/*! import() */ 3).then(__webpack_require__.bind(null, /*! ../Pages/Admin/Index */ "./resources/js/Pages/Admin/Index.vue"));
+        return __webpack_require__.e(/*! import() */ 4).then(__webpack_require__.bind(null, /*! ../Pages/Admin/Index */ "./resources/js/Pages/Admin/Index.vue"));
       }
     }, {
-      path: '/newProduct',
+      path: '/products',
       component: function component() {
-        return Promise.all(/*! import() */[__webpack_require__.e(0), __webpack_require__.e(2)]).then(__webpack_require__.bind(null, /*! ../Pages/Admin/CreateNewProduct */ "./resources/js/Pages/Admin/CreateNewProduct.vue"));
+        return Promise.all(/*! import() */[__webpack_require__.e(0), __webpack_require__.e(3)]).then(__webpack_require__.bind(null, /*! ../Pages/Admin/CreateNewProduct */ "./resources/js/Pages/Admin/CreateNewProduct.vue"));
       }
     }, {
-      path: '/newCategory',
+      path: '/categories',
       component: function component() {
-        return Promise.all(/*! import() */[__webpack_require__.e(0), __webpack_require__.e(1)]).then(__webpack_require__.bind(null, /*! ../Pages/Admin/CreateNewCategory */ "./resources/js/Pages/Admin/CreateNewCategory.vue"));
+        return Promise.all(/*! import() */[__webpack_require__.e(0), __webpack_require__.e(2)]).then(__webpack_require__.bind(null, /*! ../Pages/Admin/CreateNewCategory */ "./resources/js/Pages/Admin/CreateNewCategory.vue"));
+      }
+    }, {
+      path: '/brands',
+      component: function component() {
+        return Promise.all(/*! import() */[__webpack_require__.e(0), __webpack_require__.e(1)]).then(__webpack_require__.bind(null, /*! ../Pages/Admin/Brands */ "./resources/js/Pages/Admin/Brands.vue"));
       }
     }]
   }]
@@ -83665,7 +83670,11 @@ var store = new vuex__WEBPACK_IMPORTED_MODULE_2__["default"].Store({
     categoryData: [],
     categoryDeleteMessage: [],
     categoryCreateMessage: [],
-    productsData: []
+    productsData: [],
+    productCreateMessage: [],
+    brandsData: [],
+    brandCreateMessage: [],
+    brandDeleteMessage: []
   },
   getters: {
     CATEGOR_GETTER: function CATEGOR_GETTER(state, getters) {
@@ -83679,6 +83688,18 @@ var store = new vuex__WEBPACK_IMPORTED_MODULE_2__["default"].Store({
     },
     PRODUCTS_GETTER: function PRODUCTS_GETTER(state, getters) {
       return state.productsData;
+    },
+    PRODUCT_CREATE_GETTER: function PRODUCT_CREATE_GETTER(state) {
+      return state.productCreateMessage;
+    },
+    BRAND_GETTER: function BRAND_GETTER(state, getters) {
+      return state.brandsData;
+    },
+    BRAND_CREATE_GETTER: function BRAND_CREATE_GETTER(state) {
+      return state.brandCreateMessage;
+    },
+    BRAND_DESTROY_GETTER: function BRAND_DESTROY_GETTER(state) {
+      return state.brandDeleteMessage;
     }
   },
   mutations: {
@@ -83693,6 +83714,18 @@ var store = new vuex__WEBPACK_IMPORTED_MODULE_2__["default"].Store({
     },
     PRODUCTS_MUTATION: function PRODUCTS_MUTATION(state, data) {
       state.productsData = data;
+    },
+    PRODUCT_CREATE_MUTATION: function PRODUCT_CREATE_MUTATION(state, data) {
+      state.productCreateMessage = data;
+    },
+    BRAND_MUTATION: function BRAND_MUTATION(state, data) {
+      state.brandsData = data;
+    },
+    BRAND_CREATE_MUTATION: function BRAND_CREATE_MUTATION(state, data) {
+      state.brandCreateMessage = data;
+    },
+    BRAND_DESTROY_MUTATION: function BRAND_DESTROY_MUTATION(state, data) {
+      state.brandDeleteMessage = data;
     }
   },
   actions: {
@@ -83786,6 +83819,98 @@ var store = new vuex__WEBPACK_IMPORTED_MODULE_2__["default"].Store({
             }
           }
         }, _callee4);
+      }))();
+    },
+    PRODUCT_CREATE_ACTION: function PRODUCT_CREATE_ACTION(_ref5, data) {
+      return _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee5() {
+        var commit, res;
+        return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function _callee5$(_context5) {
+          while (1) {
+            switch (_context5.prev = _context5.next) {
+              case 0:
+                commit = _ref5.commit;
+                _context5.next = 3;
+                return axios__WEBPACK_IMPORTED_MODULE_3___default.a.post('/api/products/create', data);
+
+              case 3:
+                res = _context5.sent;
+                commit('PRODUCT_CREATE_MUTATION', res.data);
+
+              case 5:
+              case "end":
+                return _context5.stop();
+            }
+          }
+        }, _callee5);
+      }))();
+    },
+    BRAND_ACTION: function BRAND_ACTION(_ref6) {
+      return _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee6() {
+        var commit, res;
+        return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function _callee6$(_context6) {
+          while (1) {
+            switch (_context6.prev = _context6.next) {
+              case 0:
+                commit = _ref6.commit;
+                _context6.next = 3;
+                return axios__WEBPACK_IMPORTED_MODULE_3___default.a.get('/api/brands/index');
+
+              case 3:
+                res = _context6.sent;
+                commit('BRAND_MUTATION', res.data);
+
+              case 5:
+              case "end":
+                return _context6.stop();
+            }
+          }
+        }, _callee6);
+      }))();
+    },
+    BRAND_CREATE_ACTION: function BRAND_CREATE_ACTION(_ref7, data) {
+      return _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee7() {
+        var commit, res;
+        return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function _callee7$(_context7) {
+          while (1) {
+            switch (_context7.prev = _context7.next) {
+              case 0:
+                commit = _ref7.commit;
+                _context7.next = 3;
+                return axios__WEBPACK_IMPORTED_MODULE_3___default.a.post('/api/brands/create', data);
+
+              case 3:
+                res = _context7.sent;
+                commit('CATEGORY_CREATE_MUTATION', res.data);
+
+              case 5:
+              case "end":
+                return _context7.stop();
+            }
+          }
+        }, _callee7);
+      }))();
+    },
+    BRAND_DESTROY_ACTION: function BRAND_DESTROY_ACTION(_ref8, data) {
+      return _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee8() {
+        var commit, res;
+        return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function _callee8$(_context8) {
+          while (1) {
+            switch (_context8.prev = _context8.next) {
+              case 0:
+                commit = _ref8.commit;
+                _context8.next = 3;
+                return axios__WEBPACK_IMPORTED_MODULE_3___default.a.post('/api/brands/destroy', data);
+
+              case 3:
+                res = _context8.sent;
+                commit('BRAND_DESTROY_MUTATION', res.data);
+
+              case 5:
+              case "end":
+                return _context8.stop();
+            }
+          }
+        }, _callee8);
       }))();
     }
   }

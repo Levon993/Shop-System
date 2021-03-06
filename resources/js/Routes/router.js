@@ -35,12 +35,16 @@ export default new Router({
 
                     },
                     {
-                        path: '/newProduct',
+                        path: '/products',
                         component: () => import('../Pages/Admin/CreateNewProduct'),
                     },
                     {
-                        path: '/newCategory',
+                        path: '/categories',
                         component: () => import('../Pages/Admin/CreateNewCategory'),
+                    },
+                    {
+                        path: '/brands',
+                        component: () => import('../Pages/Admin/Brands'),
                     },
                 ]
 

@@ -12,7 +12,7 @@
         <div class="list">
 
          <div>
-             <vs-table v-if="categories.length" striped>
+             <vs-table  striped>
                  <template #thead>
                      <vs-tr>
                          <vs-th>
@@ -177,7 +177,7 @@
                await this.$store.dispatch('CATEGORIES_ACTION');
                 const res = await this.$store.getters.CATEGOR_GETTER;
                 this.categories = res
-                console.log(this.categories)
+
 
             },
 

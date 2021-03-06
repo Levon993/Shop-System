@@ -2,6 +2,7 @@
 namespace App\Repositories;
 use App\Repositories\CoreRepository;
 use App\Repositories\ResourceInterface;
+use Illuminate\Support\Facades\Storage;
 use App\Models\Product as Model;
 use Exception;
 use Illuminate\Http\Request;
@@ -15,23 +16,24 @@ class ProductRepository extends CoreRepository implements ResourceInterface
 
     public function index(Request $request)
     {
-        $products = $this->startConditions()::with('category')->get();
-        return products;
+        $products = $this->startConditions()::with(['category','brand'])->get();
+        return $products;
     }
 
     public function create(Request $request)
     {
         $request->validate([
             'title' => 'required|min:3|max:25|string',
-            'alias' => 'required|min:3|max:25|string',
+
             'category_id' => 'required|int',
+            'brand_id' => 'required|int',
             'keywords' => 'nullable|string|min:3|max:12',
             'description' => 'nullable|string',
             'hit' => 'nullable|string',
         ]);
-        $file = $request->file('img');
+        $file = $request->file('image');
 
-        if (!$request->hasFile('img')) {
+        if (!$request->hasFile('image')) {
             return response()->json(['image not found']);
         }
 
@@ -44,10 +46,10 @@ class ProductRepository extends CoreRepository implements ResourceInterface
         $storagePhat = Storage::url('app/public/images/' . $file->getClientOriginalName());
         $newProduct = $this->startConditions();
         $newProduct->category_id = $request->category_id;
+        $newProduct->brand_id = $request->brand_id;
         $newProduct->title = $request->title;
-        $newProduct->alias = $request->alias;
+        $newProduct->alias = $request->title;
         $newProduct->price = $request->price;
-        $newProduct->status = $request->status;
         $newProduct->keywords = $request->keywords;
         $newProduct->description = $request->description;
         $newProduct->img = $file->getClientOriginalName() ? $file->getClientOriginalName() : 'empty';
