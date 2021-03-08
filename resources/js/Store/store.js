@@ -100,8 +100,8 @@ const store = new Vuex.Store({
             commit('CATEGORY_CREATE_MUTATION',res.data)
 
         },
-        async PRODUCTS_ACTION({ commit }) {
-            const res = await axios.get('/api/products/index')
+        async PRODUCTS_ACTION({ commit }, data) {
+            const res = await axios.post('/api/products/index',data)
             commit('PRODUCTS_MUTATION',res.data)
         },
         async PRODUCT_CREATE_ACTION({commit},data) {
@@ -122,6 +122,7 @@ const store = new Vuex.Store({
             commit('BRAND_DESTROY_MUTATION',res.data)
 
         },
+
     }
 })
 export default store

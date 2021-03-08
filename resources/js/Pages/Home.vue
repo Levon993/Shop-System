@@ -1,43 +1,110 @@
 <template>
     <div class="container">
-   <vs-card type="4">
-        <template #title>
-            <h3>Pot with a plant</h3>
-        </template>
-        <template #img>
-            <img src="../aseets/foto2.jpg" alt="">
-        </template>
-        <template #text>
-            <p>
-                Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-            </p>
-        </template>
-        <template #interactions>
-            <vs-button danger icon>
-                <i class='bx bx-heart'></i>
-            </vs-button>
-            <vs-button class="btn-chat" shadow primary>
-                <i class='bx bx-chat' ></i>
-                <span class="span">
-          54
-        </span>
-            </vs-button>
-        </template>
-       </vs-card>
+        <div class="card">
+            <img src="../aseets/foto5.png" alt="Denim Jeans" style="width:100%">
+            <h1>Tailored Jeans</h1>
+            <p class="price">$19.99</p>
+            <p>Some text about the jeans. Super slim and comfy lorem ipsum lorem jeansum. Lorem jeamsun denim lorem jeansum.</p>
+            <p><button>Add to Cart</button></p>
+        </div>  <div class="card">
+            <img src="../aseets/foto5.png" alt="Denim Jeans" style="width:100%">
+            <h1>Tailored Jeans</h1>
+            <p class="price">$19.99</p>
+            <p>Some text about the jeans. Super slim and comfy lorem ipsum lorem jeansum. Lorem jeamsun denim lorem jeansum.</p>
+            <p><button>Add to Cart</button></p>
+        </div>  <div class="card">
+            <img src="../aseets/foto5.png" alt="Denim Jeans" style="width:100%">
+            <h1>Tailored Jeans</h1>
+            <p class="price">$19.99</p>
+            <p>Some text about the jeans. Super slim and comfy lorem ipsum lorem jeansum. Lorem jeamsun denim lorem jeansum.</p>
+            <p><button>Add to Cart</button></p>
+        </div>  <div class="card">
+            <img src="../aseets/foto5.png" alt="Denim Jeans" style="width:100%">
+            <h1>Tailored Jeans</h1>
+            <p class="price">$19.99</p>
+            <p>Some text about the jeans. Super slim and comfy lorem ipsum lorem jeansum. Lorem jeamsun denim lorem jeansum.</p>
+            <p><button>Add to Cart</button></p>
+        </div>  <div class="card">
+            <img src="../aseets/foto5.png" alt="Denim Jeans" style="width:100%">
+            <h1>Tailored Jeans</h1>
+            <p class="price">$19.99</p>
+            <p>Some text about the jeans. Super slim and comfy lorem ipsum lorem jeansum. Lorem jeamsun denim lorem jeansum.</p>
+            <p><button>Add to Cart</button></p>
+        </div>  <div class="card">
+            <img src="../aseets/foto5.png" alt="Denim Jeans" style="width:100%">
+            <h1>Tailored Jeans</h1>
+            <p class="price">$19.99</p>
+            <p>Some text about the jeans. Super slim and comfy lorem ipsum lorem jeansum. Lorem jeamsun denim lorem jeansum.</p>
+            <p><button>Add to Cart</button></p>
+        </div>  <div class="card">
+            <img src="../aseets/foto5.png" alt="Denim Jeans" style="width:100%">
+            <h1>Tailored Jeans</h1>
+            <p class="price">$19.99</p>
+            <p>Some text about the jeans. Super slim and comfy lorem ipsum lorem jeansum. Lorem jeamsun denim lorem jeansum.</p>
+            <p><button>Add to Cart</button></p>
+        </div>  <div class="card">
+            <img src="../aseets/foto5.png" alt="Denim Jeans" style="width:100%">
+            <h1>Tailored Jeans</h1>
+            <p class="price">$19.99</p>
+            <p>Some text about the jeans. Super slim and comfy lorem ipsum lorem jeansum. Lorem jeamsun denim lorem jeansum.</p>
+            <p><button>Add to Cart</button></p>
+        </div>  <div class="card">
+            <img src="../aseets/foto5.png" alt="Denim Jeans" style="width:100%">
+            <h1>Tailored Jeans</h1>
+            <p class="price">$19.99</p>
+            <p>Some text about the jeans. Super slim and comfy lorem ipsum lorem jeansum. Lorem jeamsun denim lorem jeansum.</p>
+            <p><button>Add to Cart</button></p>
+        </div>  <div class="card">
+            <img src="../aseets/foto5.png" alt="Denim Jeans" style="width:100%">
+            <h1>Tailored Jeans</h1>
+            <p class="price">$19.99</p>
+            <p>Some text about the jeans. Super slim and comfy lorem ipsum lorem jeansum. Lorem jeamsun denim lorem jeansum.</p>
+            <p><button>Add to Cart</button></p>
+        </div>  <div class="card">
+            <img src="../aseets/foto5.png" alt="Denim Jeans" style="width:100%">
+            <h1>Tailored Jeans</h1>
+            <p class="price">$19.99</p>
+            <p>Some text about the jeans. Super slim and comfy lorem ipsum lorem jeansum. Lorem jeamsun denim lorem jeansum.</p>
+            <p><button>Add to Cart</button></p>
+        </div>  <div class="card">
+            <img src="../aseets/foto5.png" alt="Denim Jeans" style="width:100%">
+            <h1>Tailored Jeans</h1>
+            <p class="price">$19.99</p>
+            <p>Some text about the jeans. Super slim and comfy lorem ipsum lorem jeansum. Lorem jeamsun denim lorem jeansum.</p>
+            <p><button>Add to Cart</button></p>
+        </div>
+
     </div>
 </template>
 <script>
     export default {
+        data:(()=>{
+            return{
+                products:[]
+            }
+        }),
+
         mounted() {
-            console.log('hello from Home')
+            this.getProducts()
+        },
+
+        methods:{
+          async  getProducts()
+            {
+                await this.$store.dispatch('PRODUCTS_ACTION');
+                const res = await this.$store.getters.PRODUCTS_GETTER;
+                this.products = res
+                console.log(this.products)
+            }
         }
+
     }
 </script>
 <style>
     .container{
         /*width: 350px;*/
         /*height: 400px;*/
-        margin-top: 25px;
+        margin-top: 55px;
         margin: 15px;
         padding: 15px;
         display: flex;
@@ -45,5 +112,34 @@
         justify-content: center;
         align-items: center;
         flex-wrap:wrap ;
+    }
+    .card {
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+        max-width: 200px;
+        margin: auto;
+
+        /*text-align: center;*/
+        font-family: arial;
+    }
+
+    .price {
+        color: grey;
+        font-size: 22px;
+    }
+
+    .card button {
+        border: none;
+        outline: 0;
+        padding: 12px;
+        color: white;
+        background-color: #000;
+        text-align: center;
+        cursor: pointer;
+        width: 100%;
+        font-size: 18px;
+    }
+
+    .card button:hover {
+        opacity: 0.7;
     }
 </style>

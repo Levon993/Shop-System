@@ -1,41 +1,6 @@
-<template>
-    <div>
-        <div class="nav">
-            <div class="center examplex">
-                <vs-navbar center-collapsed v-model="active">
-                    <template #left>
-                        <img class="logo" src="../aseets/logo.png" alt="">
-                        <div class="search">
-                            <vs-input
-                                type="search"
-                                label="Search"
-                                class="search_input"
-                            />
-                            <vs-button
-                                success
-                                flat
-                                :active="active == 1"
-                                @click="active = 1"
-                            >
-                                Success
-                            </vs-button>
-                        </div>
 
-                    </template>
-                    <template #right>
-                        <vs-button flat >Login</vs-button>
-                        <vs-button>Get Started</vs-button>
-                    </template>
-                </vs-navbar>
-                <div class="square">
-                    <div class="child">
-                        child 1
-                    </div>
-                   <router-view></router-view>
-                </div>
-            </div>
-
-        </div>
+    <template>
+<div>
     <div class="hidden">
         <vs-sidebar
             absolute
@@ -176,10 +141,52 @@
             </template>
         </vs-sidebar>
     </div>
-    </div>
-</template>
+        <div class="center example-nav">
+            <vs-navbar not-line center-collapsed v-model="active">
+                <template #left>
+                    <img src="../aseets/logo.png" alt="">
+                </template>
+                <vs-navbar-item :active="active == 'guide'" id="guide">
+                    Guide
+                </vs-navbar-item>
+                <vs-navbar-item :active="active == 'docs'" id="docs">
+                    Documents
+                </vs-navbar-item>
+                <vs-navbar-item :active="active == 'components'" id="components">
+                    Components
+                </vs-navbar-item>
+                <vs-navbar-item :active="active == 'license'" id="license">
+                    license
+                </vs-navbar-item>
+                <template #right>
+                    <vs-button flat >Login</vs-button>
+                    <vs-button>Get Started</vs-button>
+                </template>
+            </vs-navbar>
+            <div class="square">
+                <div class="child_1">
+
+                    <productList></productList>
+                </div>
+                <div class="child">
+                    <brandsList />
+                </div>
+                <div class="child">
+                    child 3
+                </div>
+            </div>
+        </div>
+</div>
+    </template>
+
 <script>
+ import productList from '../components/productList'
+ import brandsList from '../components/brandsSlide'
     export default {
+     components:{
+         productList,
+         brandsList
+     },
         data:() => ({
             active: 'home',
         })
@@ -188,8 +195,7 @@
 <style>
 .hidden
 {
-    margin-top: 80px;
-   background-color: black;
+    margin-bottom: 150px;
 }
 .nav{
     margin: 15px;
@@ -199,6 +205,15 @@
     display: flex;
 
     /*width: 300px;*/
+}
+.child_1{
+    display: flex;
+    margin-top:250px;
+
+}
+.child_1_header
+{
+
 }
 
 </style>

@@ -12,13 +12,13 @@ export default new Router({
                     path: '',
                     component:Index,
                     name:'index',
-                    children: [
-                               {
-                                path: '',
-                                component: () => import('../Pages/Home'),
-
-                                }
-                            ]
+                    // children: [
+                    //            {
+                    //             path: '',
+                    //             component: () => import('../Pages/Home'),
+                    //
+                    //             }
+                    //         ]
 
              },
             {

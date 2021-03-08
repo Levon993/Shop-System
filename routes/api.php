@@ -23,7 +23,7 @@ Route::get('/categories/index', 'CategoryController@index');
 Route::post('/categories/destroy', 'CategoryController@destroy');
 
 Route::post('/products/create', 'ProductController@create');
-Route::get('/products/index', 'ProductController@index');
+Route::post('/products/index', 'ProductController@index');
 Route::post('/products/destroy', 'ProductController@destroy');
 
 Route::post('/brands/create', 'BrandController@create');

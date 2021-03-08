@@ -16,7 +16,13 @@ class ProductRepository extends CoreRepository implements ResourceInterface
 
     public function index(Request $request)
     {
-        $products = $this->startConditions()::with(['category','brand'])->get();
+        $perPage = 20;
+        if($request)
+        {
+            $perPage = $request->perPage;
+        }
+//        dd($request->all());
+        $products = $this->startConditions()::with(['category','brand'])->paginate($perPage);
         return $products;
     }
 
@@ -27,7 +33,7 @@ class ProductRepository extends CoreRepository implements ResourceInterface
 
             'category_id' => 'required|int',
             'brand_id' => 'required|int',
-            'keywords' => 'nullable|string|min:3|max:12',
+            'keywords' => 'nullable|string|min:3|max:100',
             'description' => 'nullable|string',
             'hit' => 'nullable|string',
         ]);
