@@ -29,3 +29,13 @@ Route::post('/products/destroy', 'ProductController@destroy');
 Route::post('/brands/create', 'BrandController@create');
 Route::get('/brands/index', 'BrandController@index');
 Route::post('/brands/destroy', 'BrandController@destroy');
+
+Route::post('/orders/index', 'OrderController@index');
+Route::post('/brands/create', 'OrderController@create');
+Route::post('/brands/destroy', 'OrderController@destroy');
+
+Route::post('/orders/getProductsForBasket', 'OrderController@getProductsForBasket');
+
+Route::post('/offers/index', 'OfferController@index');
+Route::post('/offers/create', 'OfferController@create');
+Route::post('/offers/destroy', 'OfferController@destroy');

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 use App\Repositories\CategoryRepository;
 use Illuminate\Http\Request;
+use App\Http\Requests\CategoryRequest;
 
 class CategoryController extends Controller
 {

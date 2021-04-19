@@ -3,7 +3,7 @@
     <div class="child_1_header">Продукты</div>
     <div class="container">
         <div class="card" v-for="product in products" :key="product.id">
-            <vs-card type="3">
+            <vs-card type="5">
                 <template #title>
                     <h3>{{product.title}}</h3>
                 </template>
@@ -16,13 +16,12 @@
                     </p>
                 </template>
                 <template #interactions>
-                    <vs-button success icon>
-                        <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-basket3-fill" viewBox="0 0 16 16">
-                            <path d="M5.757 1.071a.5.5 0 0 1 .172.686L3.383 6h9.234L10.07 1.757a.5.5 0 1 1 .858-.514L13.783 6H15.5a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5H.5a.5.5 0 0 1-.5-.5v-1A.5.5 0 0 1 .5 6h1.717L5.07 1.243a.5.5 0 0 1 .686-.172zM2.468 15.426L.943 9h14.114l-1.525 6.426a.75.75 0 0 1-.729.574H3.197a.75.75 0 0 1-.73-.574z"/>
-                        </svg>
+                    <vs-button success @click="addToBasket(product.id)" icon>
+                        <i class='bx bxs-cart-add'></i>
+
                     </vs-button>
                     <vs-button class="btn-chat" shadow primary>
-                        <i class='bx bx-chat'></i>
+
                         <span class="span">
                             {{product.price}}
                         </span>
@@ -34,21 +33,87 @@
     </div>
 </template>
 <script>
+    import axios from 'axios'
     export default {
         data:(()=>{
             return{
-                products:[]
+                products:[],
+                basket:[],
+
             }
         }),
         mounted() {
             this.getProducts()
+
         },
         methods:{
+            addToBasket(id){
+                let basket =[]
+                let item = {}
+                let count = 1;
+                if(JSON.parse(localStorage.getItem('Basket')))
+                {
+                     basket = JSON.parse(localStorage.getItem('Basket'))
+                }
+                //если корзина не пуста
+                if(basket){
+                    for (let i =0; i < basket.length; i++)
+                    {
+                        if(basket[i].id == id)
+                        {
+                            basket[i].count ++
+                            localStorage.clear()
+                            this.getProductsForBasket(basket)
+                            localStorage.setItem('Basket', JSON.stringify(basket))
+                            setTimeout(()=>
+                            {
+                                this.$parent.getBasketformStorage()
+                            },1000)
+                            return
+                        }
+                    }
+                    item = {
+                        id:id,
+                        count:count
+                    }
+                    basket.push(item)
+                    localStorage.clear()
+                    this.getProductsForBasket(basket)
+                    localStorage.setItem('Basket', JSON.stringify(basket));
+                    setTimeout(()=>
+                    {
+                        this.$parent.getBasketformStorage()
+                    },1000)
+                    return;
+
+                }
+                else{
+                    //Если корзина пуста, то в localstorage добавляется обьект с id и count
+                     item = {
+                        id:id,
+                        count:count
+                    }
+                    this.basket.push(item)
+                    localStorage.setItem('Basket', JSON.stringify(this.basket));
+                     setTimeout(()=>
+                     {
+                         this.$parent.getBasketformStorage()
+                     },1000)
+
+                }
+
+            },
+            async getProductsForBasket(data)
+            {
+               const res = await axios.post('/api/orders/getProductsForBasket',data)
+                localStorage.setItem('BasketData', JSON.stringify(res.data))
+            },
+
             async getProducts()
             {
                 const data =
                     {
-                        perPage:8
+                        perPage:6
                     }
                 await this.$store.dispatch('PRODUCTS_ACTION',data);
                 const res = await this.$store.getters.PRODUCTS_GETTER;
@@ -60,8 +125,8 @@
 </script>
 <style>
     .container{
-        margin-top: 80px;
-        margin: 15px;
+        /*margin-top: 80px;*/
+        /*margin: 15px;*/
         padding: 15px;
         display: flex;
         justify-content: center;

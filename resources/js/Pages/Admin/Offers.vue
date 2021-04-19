@@ -4,10 +4,11 @@
             <vs-button
                 @click="modalShow = !modalShow"
                 color="rgb(59,222,200)"
+                v-if="!modalShow"
                 gradient
 
             >
-                Добавить Товар
+                Добавить Предложение
             </vs-button></div>
         <div class="list">
 
@@ -19,28 +20,13 @@
                                 Имя
                             </vs-th>
                             <vs-th>
-                                Категория
-                            </vs-th>
-                            <vs-th>
-                                Бренд
-                            </vs-th>
-                            <vs-th>
-                                Алиас
-                            </vs-th>
-                            <vs-th>
-                                Цена
-                            </vs-th>
-                            <vs-th>
-                                Старая Цена
+                                Описание
                             </vs-th>
                             <vs-th>
                                 Статус
                             </vs-th>
                             <vs-th>
-                                Хит продаж
-                            </vs-th>
-                            <vs-th>
-                                Было добавлено
+                                Было Добавлено
                             </vs-th>
                             <vs-th>
 
@@ -53,49 +39,36 @@
                     <template #tbody>
                         <vs-tr
                             :key="i"
-                            v-for="(prd, i) in products"
-                            :data="prd"
+                            v-for="(ofr, i) in offers"
+                            :data="ofr"
                         >
                             <vs-td>
-                                {{ prd.title }}
+                                {{ ofr.title }}
                             </vs-td>
                             <vs-td>
-                                {{prd.category ?  prd.category.title : ''}}
+                                {{ ofr.description}}
                             </vs-td>
                             <vs-td>
-                                {{prd.brand ?  prd.brand.title : ''}}
+                                {{ ofr.status == 1  ? 'Активно' : 'Не Активно' }}
                             </vs-td>
                             <vs-td>
-                                {{ prd.alias }}
-                            </vs-td>
-                            <vs-td>
-                                {{ prd.price }}
-                            </vs-td>
-                            <vs-td>
-                                {{ prd.old_price }}
-                            </vs-td>
-                            <vs-td>
-                                {{ prd.status == 1  ? 'В наличии' : 'Нет в наличии' }}
-                            </vs-td>
-                            <vs-td>
-                                {{ prd.hit == 1 ? "Да" : 'Нет' }}
-                            </vs-td>
-                            <vs-td>
-                                {{ validDate(prd.created_at)}}
+                                {{ validDate(ofr.created_at)}}
                             </vs-td>
                             <vs-td>
                                 <vs-button
 
                                     danger
                                     border
-                                    @click="destroyProduct(prd.id)"
+                                    @click="destroyOffer(ofr.id)"
                                 >
                                     Удалить
                                 </vs-button
                                 >
                             </vs-td>
                             <vs-td>
+
                                 <vs-button
+                                    @click="edidModal(ofr)"
                                 >
                                     Редактировать
                                 </vs-button>
@@ -105,6 +78,7 @@
                 </vs-table>
             </div>
             <Create v-if="modalShow"></Create>
+            <Edit v-if="active" :offerData="editableData"></Edit>
         </div>
 
     </div>
@@ -112,52 +86,50 @@
 </template>
 <script>
 
-    import Index from "../../Layouts/index";
+
     import VueToastr from '@deveodk/vue-toastr'
     import '@deveodk/vue-toastr/dist/@deveodk/vue-toastr.css'
     Vue.use(VueToastr)
     import moment from 'moment'
-    import Create from '../../components/popups/CreateProduct'
+    import Create from '../../components/popups/CreateOffer'
+    import Edit from '../../components/popups/editOffer'
     export default
     {
         name:"CreateNewProduct",
-        components: {Index,Create},
+        components: {Create,Edit},
         // mixins:[Vuelidate()],
         data:(()=>{
             return{
                 modalShow:false,
-                product:{
-                    category_id: '',
-                    title:'',
-                    alias:'',
-                    price:'',
-                    brand_id:'',
-                    keywords:'',
-                    description:'',
-                },
-                categories: [],
+
+                offers: [],
                 brands:[],
-                products: []
+                products: [],
+                active:false,
+                editableData:{}
             }
         }),
 
 
         mounted() {
-            this.getProducts()
-
-
+            this.getOffers()
         },
         methods:{
             validDate(date)
             {
                 return  moment(date).format("MMM Do YYYY");
             },
+            edidModal(ofr){
+                this.editableData = ofr
+                this.active = true
+            },
 
-            async getProducts()
+            async getOffers()
             {
-                await this.$store.dispatch('PRODUCTS_ACTION');
-                const res = await this.$store.getters.PRODUCTS_GETTER;
-                this.products = res.data
+                await this.$store.dispatch('OFFERS_ACTION');
+                const res = await this.$store.getters.OFFERS_GETTER;
+                this.offers = res
+                console.log(res)
             },
 
 
@@ -180,7 +152,7 @@
     }
     .modal_button
     {
-        /*position: static;*/
+        position: static;
         margin-left:58%;
         top: 45px;
         /*background-color: #a1cbef;*/
@@ -197,7 +169,7 @@
     .modal_body
     {
         width: 300px;
-        height: 546px;
+        height: 500px;
         margin-left: 35%;
         margin-top: 5%;
         display: flex;
@@ -212,9 +184,8 @@
         padding: 5px;
         display: flex;
         border-bottom: 1px solid rgba(0,0,0,0.3);
-    ;
         flex-direction: column;
-
+        max-height: 150px;
     }
     .form_control input
     {
@@ -247,8 +218,8 @@
 
     #ImageUpload
     {
-       color: blue;
-       border-radius: 5px;
+        color: blue;
+        border-radius: 5px;
     }
 
 </style>

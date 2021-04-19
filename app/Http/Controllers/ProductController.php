@@ -1,11 +1,13 @@
 <?php
 
+
 namespace App\Http\Controllers;
 use App\Repositories\ProductRepository;
 use Illuminate\Http\Request;
 
 class ProductController extends Controller
 {
+
     protected $productRepository;
 
     public function __construct(ProductRepository $p)

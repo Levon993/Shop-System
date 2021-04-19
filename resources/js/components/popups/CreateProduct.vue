@@ -1,5 +1,5 @@
 <template>
-    <div  class="modal"  @click="$parent.modalShow = false">
+    <div  class="modal">
         <div class="modal_body">
             <div class="modal_header">Добавление Товара</div>
             <div class="form_control">

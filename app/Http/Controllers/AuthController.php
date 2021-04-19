@@ -6,11 +6,12 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\User;
 //use App\Http\Requests\UserCreateRequest;
+use App\Http\Requests\RegisterRequest;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Storage;
 use App\Repositories\Logs\LogsRepository;
-
+use Illuminate\Http\JsonResponse;
 class AuthController extends Controller
 {
 
@@ -42,9 +43,10 @@ class AuthController extends Controller
 
     }
 
-    public function register(Request  $request){
-//        return response()->json($request->all());
-//        try {
+    public function register(RegisterRequest  $request): ?JsonResponse
+    {
+        try {
+
 
 
             $user = User::create(
@@ -59,13 +61,11 @@ class AuthController extends Controller
 
             $accessToken = $user->createToken('authToken')->accessToken;
             return response()->json(['user' => $user, 'accessToken' => $accessToken]);
-//        }catch (\Throwable $exception){
+        }catch (\Throwable $exception){
 //            $log = new LogsRepository();
 //            $log->create($exception);
-//
-//
-//            return response()->json(['success'=>false]);
-//        }
+            return response()->json($exception->getMessage());
+        }
     }
 
 

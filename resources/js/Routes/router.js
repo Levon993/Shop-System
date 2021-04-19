@@ -43,6 +43,10 @@ export default new Router({
                         component: () => import('../Pages/Admin/CreateNewCategory'),
                     },
                     {
+                        path: '/offers',
+                        component: () => import('../Pages/Admin/Offers'),
+                    },
+                    {
                         path: '/brands',
                         component: () => import('../Pages/Admin/Brands'),
                     },

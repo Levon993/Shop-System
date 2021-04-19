@@ -18,6 +18,10 @@ const store = new Vuex.Store({
         brandCreateMessage:[],
         brandDeleteMessage:[],
 
+        offersData:[],
+        offerCreateMessage:[],
+        offerDeleteMessage:[],
+
 
     },
     getters:{
@@ -53,6 +57,14 @@ const store = new Vuex.Store({
         {
             return state.brandDeleteMessage
         },
+        OFFERS_GETTER:(state,getters)=>
+        {
+            return state.offersData
+        },
+        OFFER_CREATE_GETTER:(state) =>
+        {
+            return state.offerCreateMessage
+        },
 
     },
     mutations: {
@@ -82,6 +94,13 @@ const store = new Vuex.Store({
         },
         BRAND_DESTROY_MUTATION:(state,data) =>{
             state.brandDeleteMessage = data
+        },
+        OFFER_MUTATION:(state,data) => {
+            state.offersData = data
+        },
+        OFFER_CREATE_MUTATION:(state,data) =>
+        {
+            state.offerCreateMessage = data
         },
 
     },
@@ -120,6 +139,15 @@ const store = new Vuex.Store({
         async BRAND_DESTROY_ACTION({ commit},data) {
             const res = await axios.post('/api/brands/destroy', data)
             commit('BRAND_DESTROY_MUTATION',res.data)
+
+        },
+        async OFFERS_ACTION({ commit }) {
+            const res = await axios.post('/api/offers/index')
+            commit('OFFER_MUTATION',res.data)
+        },
+        async OFFER_CREATE_ACTION({commit},data) {
+            const res = await axios.post('/api/offers/create', data)
+            commit('OFFER_CREATE_MUTATION',res.data)
 
         },
 

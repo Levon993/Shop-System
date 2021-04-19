@@ -16,15 +16,15 @@
                 </p>
             </template>
             <template #interactions>
-                <vs-button danger icon>
-                    <i class='bx bx-heart'></i>
-                </vs-button>
-                <vs-button class="btn-chat" shadow primary>
-                    <i class='bx bx-chat'></i>
-                    <span class="span">
-            54
-          </span>
-                </vs-button>
+<!--                <vs-button danger icon>-->
+<!--&lt;!&ndash;                    <i class='bx bx-heart'></i>&ndash;&gt;-->
+<!--                </vs-button>-->
+<!--                <vs-button class="btn-chat" shadow primary>-->
+<!--&lt;!&ndash;                    <i class='bx bx-chat'></i>&ndash;&gt;-->
+<!--&lt;!&ndash;                    <span class="span">&ndash;&gt;-->
+<!--&lt;!&ndash;            54&ndash;&gt;-->
+<!--&lt;!&ndash;          </span>&ndash;&gt;-->
+<!--                </vs-button>-->
             </template>
         </vs-card>
     </vs-card-group>

@@ -17,11 +17,12 @@ class ProductRepository extends CoreRepository implements ResourceInterface
     public function index(Request $request)
     {
         $perPage = 20;
+
         if($request)
         {
             $perPage = $request->perPage;
         }
-//        dd($request->all());
+
         $products = $this->startConditions()::with(['category','brand'])->paginate($perPage);
         return $products;
     }

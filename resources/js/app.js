@@ -33,9 +33,13 @@ import Vuesax from 'vuesax'
 import store from './Store/store'
 
 import 'vuesax/dist/vuesax.css' //Vuesax styles
+import 'boxicons/css/boxicons.min.css'
 Vue.use(Vuesax, {
     // options here
 })
+import CKEditor from 'ckeditor4-vue';
+
+Vue.use( CKEditor );
 
 const app = new Vue({
     // mode:history,

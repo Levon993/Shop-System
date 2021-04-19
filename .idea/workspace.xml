@@ -2,23 +2,36 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2aec57e0-6373-4c62-a6c3-31c20ed95d6e" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/resources/js/components/brandsSlide.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/js/components/popups/CreateProduct.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/js/components/productList.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Repositories/OfferRepository.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Repositories/OrderRepository.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/Pages/Admin/Offers.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/components/OffersList.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/components/popups/CreateOffer.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/components/popups/basket.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/components/popups/editOffer.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/AuthController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/AuthController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/CategoryController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/CategoryController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/ProductController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/ProductController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/Product.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Product.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Repositories/ProductRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Repositories/ProductRepository.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/seeds/DatabaseSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeds/DatabaseSeeder.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/User.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/1.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/1.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/2.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/2.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/3.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/3.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/5.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/5.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/4.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/4.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/6.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/6.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/app.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/js/Layouts/index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/Layouts/index.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/js/Pages/Admin/CreateNewProduct.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/Pages/Admin/CreateNewProduct.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/Pages/Home.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/Pages/Home.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/js/Routes/router.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/Routes/router.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/js/Store/store.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/Store/store.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/components/brandsSlide.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/brandsSlide.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/components/popups/CreateProduct.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/popups/CreateProduct.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/components/productList.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/productList.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/api.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/api.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -287,7 +300,60 @@
       <workItem from="1615235316282" duration="1742000" />
       <workItem from="1615238229034" duration="1793000" />
       <workItem from="1615240039524" duration="1400000" />
-      <workItem from="1615242241604" duration="878000" />
+      <workItem from="1615242241604" duration="2165000" />
+      <workItem from="1615288144739" duration="2000" />
+      <workItem from="1615292324553" duration="4000" />
+      <workItem from="1615320301135" duration="1568000" />
+      <workItem from="1615374739791" duration="821000" />
+      <workItem from="1615394801290" duration="2355000" />
+      <workItem from="1615397943629" duration="1679000" />
+      <workItem from="1615400647349" duration="1793000" />
+      <workItem from="1615402478065" duration="1361000" />
+      <workItem from="1615408697036" duration="2265000" />
+      <workItem from="1615459775492" duration="2188000" />
+      <workItem from="1615464809563" duration="1612000" />
+      <workItem from="1615467767859" duration="1795000" />
+      <workItem from="1615469575249" duration="1756000" />
+      <workItem from="1615471386238" duration="801000" />
+      <workItem from="1615475196455" duration="2140000" />
+      <workItem from="1615484268847" duration="2219000" />
+      <workItem from="1615549866028" duration="1796000" />
+      <workItem from="1615551678683" duration="2111000" />
+      <workItem from="1615554409085" duration="1204000" />
+      <workItem from="1615559427422" duration="1797000" />
+      <workItem from="1615561257459" duration="1333000" />
+      <workItem from="1615566009111" duration="1864000" />
+      <workItem from="1615581992685" duration="1788000" />
+      <workItem from="1615583854756" duration="949000" />
+      <workItem from="1615585036071" duration="1796000" />
+      <workItem from="1615586846734" duration="1418000" />
+      <workItem from="1615592071210" duration="2053000" />
+      <workItem from="1615627997407" duration="1273000" />
+      <workItem from="1615629303126" duration="1014000" />
+      <workItem from="1615630485187" duration="2048000" />
+      <workItem from="1615633461584" duration="1639000" />
+      <workItem from="1615635122283" duration="1830000" />
+      <workItem from="1615636971995" duration="1494000" />
+      <workItem from="1615644499452" duration="2067000" />
+      <workItem from="1615647739761" duration="634000" />
+      <workItem from="1615650410911" duration="1867000" />
+      <workItem from="1615653461046" duration="212000" />
+      <workItem from="1615659422449" duration="1882000" />
+      <workItem from="1615663332729" duration="1807000" />
+      <workItem from="1615665528044" duration="1906000" />
+      <workItem from="1615669508458" duration="1877000" />
+      <workItem from="1615934799584" duration="14000" />
+      <workItem from="1615937431626" duration="4000" />
+      <workItem from="1615942718108" duration="3000" />
+      <workItem from="1616184923973" duration="1064000" />
+      <workItem from="1616186761054" duration="1510000" />
+      <workItem from="1616189085189" duration="1081000" />
+      <workItem from="1618614748983" duration="11000" />
+      <workItem from="1618829773640" duration="1581000" />
+      <workItem from="1618832055457" duration="1367000" />
+      <workItem from="1618834152148" duration="1117000" />
+      <workItem from="1618846637976" duration="1839000" />
+      <workItem from="1618848489599" duration="946000" />
     </task>
     <servers />
   </component>
@@ -295,30 +361,42 @@
     <option name="version" value="1" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="446" y="168" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1615063387610">
+    <state x="446" y="168" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1615395634160">
       <screen x="0" y="0" width="1360" height="728" />
     </state>
-    <state x="446" y="168" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1360.728@0.0.1360.728" timestamp="1615063387610" />
-    <state x="410" y="112" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1615045093713">
+    <state x="446" y="168" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1360.728@0.0.1360.728" timestamp="1615395634160" />
+    <state x="410" y="112" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1615585837782">
       <screen x="0" y="0" width="1360" height="728" />
     </state>
-    <state x="410" y="112" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1360.728@0.0.1360.728" timestamp="1615045093713" />
-    <state x="410" y="120" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1614955209803">
+    <state x="410" y="112" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1360.728@0.0.1360.728" timestamp="1615585837782" />
+    <state x="410" y="120" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1615628557544">
       <screen x="0" y="0" width="1360" height="728" />
     </state>
-    <state x="410" y="120" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1360.728@0.0.1360.728" timestamp="1614955209803" />
-    <state x="307" y="199" key="NewPhpClassDialog" timestamp="1615054700101">
+    <state x="410" y="120" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1360.728@0.0.1360.728" timestamp="1615628557544" />
+    <state x="364" y="20" width="645" height="688" key="#phpunit.xml" timestamp="1615464964435">
       <screen x="0" y="0" width="1360" height="728" />
     </state>
-    <state x="307" y="199" key="NewPhpClassDialog/0.0.1360.728@0.0.1360.728" timestamp="1615054700101" />
-    <state x="716" y="189" key="com.intellij.ide.util.TipDialog" timestamp="1615242241657">
+    <state x="364" y="20" width="645" height="688" key="#phpunit.xml/0.0.1360.728@0.0.1360.728" timestamp="1615464964435" />
+    <state x="307" y="199" key="NewPhpClassDialog" timestamp="1615585434063">
       <screen x="0" y="0" width="1360" height="728" />
     </state>
-    <state x="716" y="189" key="com.intellij.ide.util.TipDialog/0.0.1360.728@0.0.1360.728" timestamp="1615242241657" />
-    <state x="-4" y="166" key="run.anything.popup" timestamp="1615057862338">
+    <state x="307" y="199" key="NewPhpClassDialog/0.0.1360.728@0.0.1360.728" timestamp="1615585434063" />
+    <state width="617" height="446" key="SwitcherDM" timestamp="1615638375538">
       <screen x="0" y="0" width="1360" height="728" />
     </state>
-    <state x="-4" y="166" key="run.anything.popup/0.0.1360.728@0.0.1360.728" timestamp="1615057862338" />
+    <state width="617" height="446" key="SwitcherDM/0.0.1360.728@0.0.1360.728" timestamp="1615638375538" />
+    <state x="716" y="189" key="com.intellij.ide.util.TipDialog" timestamp="1618848490722">
+      <screen x="0" y="0" width="1360" height="728" />
+    </state>
+    <state x="716" y="189" key="com.intellij.ide.util.TipDialog/0.0.1360.728@0.0.1360.728" timestamp="1618848490722" />
+    <state x="478" y="54" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1615663365108">
+      <screen x="0" y="0" width="1360" height="728" />
+    </state>
+    <state x="478" y="54" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/0.0.1360.728@0.0.1360.728" timestamp="1615663365108" />
+    <state x="336" y="162" key="run.anything.popup" timestamp="1615631611382">
+      <screen x="0" y="0" width="1360" height="728" />
+    </state>
+    <state x="336" y="162" key="run.anything.popup/0.0.1360.728@0.0.1360.728" timestamp="1615631611382" />
     <state x="343" y="49" width="672" height="678" key="search.everywhere.popup" timestamp="1615226511857">
       <screen x="0" y="0" width="1360" height="728" />
     </state>
