@@ -2,8 +2,10 @@
 
 
 namespace App\Repositories;
+use App\Models\Order;
 use App\Repositories\CategoryRepository;
 use App\Repositories\ResourceInterface;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Storage;
 use App\Models\Order as Model;
 use App\Models\Product;
@@ -36,7 +38,25 @@ class OrderRepository extends CoreRepository implements ResourceInterface
 
     public function index(Request $request)
     {
-        // TODO: Implement index() method.
+       $orders = Order::query()
+           ->join('users','orders.user_id','=','users.id')
+           ->join('order_products', 'order_products.order_id','=',
+               'orders.id')
+           ->select('orders.id','orders.user_id', 'orders.status',
+               'orders.created_at','orders.updated_at','orders.currency','users.name',
+               \DB::raw('ROUND(SUM(order_products.price),2) AS sum'))
+           ->groupBy('orders.id')
+           ->groupBy('orders.user_id')
+           ->groupBy('orders.status')
+           ->groupBy('orders.created_at')
+           ->groupBy('orders.updated_at')
+           ->groupBy('orders.currency')
+           ->orderBy('orders.status')
+           ->orderBy('orders.id')
+           ->groupBy('users.id')
+           ->groupBy('users.name')
+           ->get();
+       return $orders;
     }
 
     public function create(Request $request)

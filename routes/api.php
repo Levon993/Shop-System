@@ -18,6 +18,11 @@ use Illuminate\Support\Facades\Route;
 //    return $request->user();
 //});
 Route::post('/register', 'AuthController@register');
+Route::post('/login', 'AuthController@login');
+Route::post('/logout', 'AuthController@logout');
+Route::post('/test/user','AuthController@authUser' );//->middleware(['Headers','auth:api']);;
+
+
 Route::post('/categories/create', 'CategoryController@create');
 Route::get('/categories/index', 'CategoryController@index');
 Route::post('/categories/destroy', 'CategoryController@destroy');
@@ -30,7 +35,7 @@ Route::post('/brands/create', 'BrandController@create');
 Route::get('/brands/index', 'BrandController@index');
 Route::post('/brands/destroy', 'BrandController@destroy');
 
-Route::post('/orders/index', 'OrderController@index');
+Route::get('/orders/index', 'OrderController@index')->middleware(['Headers','auth:api']);;;
 Route::post('/brands/create', 'OrderController@create');
 Route::post('/brands/destroy', 'OrderController@destroy');
 

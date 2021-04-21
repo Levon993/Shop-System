@@ -22,7 +22,8 @@ class OrderController extends Controller
 
     public function index(Request $request)
     {
-
+        $orders = $this->OrderRepository->index($request);
+        return response()->json($orders);
     }
 
     public function create(Request $request)

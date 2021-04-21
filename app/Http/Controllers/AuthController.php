@@ -6,6 +6,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\User;
 //use App\Http\Requests\UserCreateRequest;
+use App\Http\Requests\LoginRequest;
 use App\Http\Requests\RegisterRequest;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Auth;
@@ -16,39 +17,34 @@ class AuthController extends Controller
 {
 
 
-    public function login(Request $request){
+    public function login(LoginRequest $request):?JsonResponse
+    {
+//        try {
+        $loginData = $request->all();
+//        return response()->json($loginData);
 
-
-        try {
-
-
-            $loginData = $request->validate([
-                'email' => 'email|required',
-                'password' => 'required'
-            ]);
             if (!auth()->attempt($loginData)) {
                 return response()->json(['message' => 'invalid Credential']);
             }
             $accessToken = auth()->user()->createToken('authToken')->accessToken;
-            $role = auth()->user()->roles;
-            return response()->json(['user' => auth()->user(), 'access_token' => $accessToken, 'role' => $role]);
+            \Cache::set('token', $accessToken);
+            $role = auth()->user()->role;
+            list($rl) = $role;
+            return response()->json(['user' => auth()->user()->name, 'access_token' => $accessToken, 'role' => $rl->{'name'}]);
 
-        }catch (\Throwable $exception){
-            $log = new LogsRepository();
-            $log->create($exception);
-
-
-            return response()->json(['success'=>false]);
-        }
+//        }catch (\Throwable $exception){
+////            $log = new LogsRepository();
+////            $log->create($exception);
+//
+//
+//            return response()->json(['success'=>false]);
+//        }
 
     }
 
     public function register(RegisterRequest  $request): ?JsonResponse
     {
         try {
-
-
-
             $user = User::create(
                 [
                     'name' => $request->name,
@@ -57,9 +53,8 @@ class AuthController extends Controller
                 ]
 
             );
-
-
             $accessToken = $user->createToken('authToken')->accessToken;
+
             return response()->json(['user' => $user, 'accessToken' => $accessToken]);
         }catch (\Throwable $exception){
 //            $log = new LogsRepository();
@@ -77,12 +72,24 @@ class AuthController extends Controller
         }catch (\Throwable $exception){
             $log = new LogsRepository();
             $log->create($exception);
-
-
             return response()->json(['success'=>false]);
         }
 
     }
+
+    public function authUser(Request $request)
+    {
+
+       $user =  auth()->user();
+       $token = \Cache::get('token');
+
+
+       return response()->json(['user' =>$user ,'token' =>$token]);
+    }
+
+
+
+
     public function registerImage(){
         try {
 
