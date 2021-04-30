@@ -27,10 +27,10 @@ class AuthController extends Controller
                 return response()->json(['message' => 'invalid Credential']);
             }
             $accessToken = auth()->user()->createToken('authToken')->accessToken;
-            \Cache::set('token', $accessToken);
             $role = auth()->user()->role;
             list($rl) = $role;
-            return response()->json(['user' => auth()->user()->name, 'access_token' => $accessToken, 'role' => $rl->{'name'}]);
+             return response()->json(['user' => auth()->user()->name, 'access_token' => $accessToken, 'role' => $rl->{'name'}]);
+          //  return response()->json(['user' => auth()->user()->name,  'role' => $rl->{'name'}]);
 
 //        }catch (\Throwable $exception){
 ////            $log = new LogsRepository();
@@ -79,12 +79,12 @@ class AuthController extends Controller
 
     public function authUser(Request $request)
     {
+        $role = auth()->user()->role;
+        list($rl) = $role;
+        $user = auth()->user()->name;
 
-       $user =  auth()->user();
-       $token = \Cache::get('token');
 
-
-       return response()->json(['user' =>$user ,'token' =>$token]);
+       return response()->json(['user' =>$user, 'role'=> $rl->{'name'} ]);
     }
 
 

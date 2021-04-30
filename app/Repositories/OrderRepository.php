@@ -38,6 +38,7 @@ class OrderRepository extends CoreRepository implements ResourceInterface
 
     public function index(Request $request)
     {
+
        $orders = Order::query()
            ->join('users','orders.user_id','=','users.id')
            ->join('order_products', 'order_products.order_id','=',
@@ -55,7 +56,7 @@ class OrderRepository extends CoreRepository implements ResourceInterface
            ->orderBy('orders.id')
            ->groupBy('users.id')
            ->groupBy('users.name')
-           ->get();
+           ->paginate(5);
        return $orders;
     }
 

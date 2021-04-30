@@ -20,22 +20,22 @@ use Illuminate\Support\Facades\Route;
 Route::post('/register', 'AuthController@register');
 Route::post('/login', 'AuthController@login');
 Route::post('/logout', 'AuthController@logout');
-Route::post('/test/user','AuthController@authUser' );//->middleware(['Headers','auth:api']);;
+Route::post('/get/user','AuthController@authUser' )->middleware(['auth:api']);;
 
 
-Route::post('/categories/create', 'CategoryController@create');
-Route::get('/categories/index', 'CategoryController@index');
-Route::post('/categories/destroy', 'CategoryController@destroy');
+Route::post('/categories/create', 'CategoryController@create')->middleware(['auth:api']);;
+Route::get('/categories/index', 'CategoryController@index')->middleware(['auth:api']);;
+Route::post('/categories/destroy', 'CategoryController@destroy')->middleware(['auth:api']);;
 
-Route::post('/products/create', 'ProductController@create');
-Route::post('/products/index', 'ProductController@index');
-Route::post('/products/destroy', 'ProductController@destroy');
+Route::post('/products/create', 'ProductController@create')->middleware(['auth:api']);
+Route::post('/products/index', 'ProductController@index')->middleware(['auth:api']);
+Route::post('/products/destroy', 'ProductController@destroy')->middleware(['auth:api']);
 
 Route::post('/brands/create', 'BrandController@create');
 Route::get('/brands/index', 'BrandController@index');
 Route::post('/brands/destroy', 'BrandController@destroy');
 
-Route::get('/orders/index', 'OrderController@index')->middleware(['Headers','auth:api']);;;
+Route::post('/orders/index', 'OrderController@index')->middleware(['Headers','auth:api']);;;
 Route::post('/brands/create', 'OrderController@create');
 Route::post('/brands/destroy', 'OrderController@destroy');
 
