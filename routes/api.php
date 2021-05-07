@@ -29,13 +29,14 @@ Route::post('/categories/destroy', 'CategoryController@destroy')->middleware(['a
 
 Route::post('/products/create', 'ProductController@create')->middleware(['auth:api']);
 Route::post('/products/index', 'ProductController@index')->middleware(['auth:api']);
+Route::post('/products/search', 'ProductController@search')->middleware(['auth:api']);
 Route::post('/products/destroy', 'ProductController@destroy')->middleware(['auth:api']);
 
-Route::post('/brands/create', 'BrandController@create');
-Route::get('/brands/index', 'BrandController@index');
-Route::post('/brands/destroy', 'BrandController@destroy');
+Route::post('/brands/create', 'BrandController@create')->middleware(['auth:api']);
+Route::get('/brands/index', 'BrandController@index')->middleware(['auth:api']);
+Route::post('/brands/destroy', 'BrandController@destroy')->middleware(['auth:api']);
 
-Route::post('/orders/index', 'OrderController@index')->middleware(['Headers','auth:api']);;;
+Route::post('/orders/index', 'OrderController@index')->middleware(['Headers','auth:api']);
 Route::post('/brands/create', 'OrderController@create');
 Route::post('/brands/destroy', 'OrderController@destroy');
 

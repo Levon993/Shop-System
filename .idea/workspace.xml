@@ -3,8 +3,9 @@
   <component name="ChangeListManager">
     <list default="true" id="2aec57e0-6373-4c62-a6c3-31c20ed95d6e" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/AuthController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/AuthController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Repositories/OrderRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Repositories/OrderRepository.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/ProductController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/ProductController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Kernel.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Kernel.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Repositories/ProductRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Repositories/ProductRepository.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/api.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/api.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -376,6 +377,17 @@
       <workItem from="1619640299326" duration="1824000" />
       <workItem from="1619717274769" duration="1591000" />
       <workItem from="1619735423164" duration="1294000" />
+      <workItem from="1619743085636" duration="143000" />
+      <workItem from="1619780487258" duration="683000" />
+      <workItem from="1619783092714" duration="1245000" />
+      <workItem from="1619788648784" duration="2030000" />
+      <workItem from="1619791183087" duration="1744000" />
+      <workItem from="1619867927446" duration="1560000" />
+      <workItem from="1619954102494" duration="1999000" />
+      <workItem from="1619956770589" duration="657000" />
+      <workItem from="1620327864757" duration="1103000" />
+      <workItem from="1620369227380" duration="1558000" />
+      <workItem from="1620394435451" duration="1479000" />
     </task>
     <servers />
   </component>
@@ -407,10 +419,10 @@
       <screen x="0" y="0" width="1360" height="728" />
     </state>
     <state width="617" height="446" key="SwitcherDM/0.0.1360.728@0.0.1360.728" timestamp="1615638375538" />
-    <state x="716" y="189" key="com.intellij.ide.util.TipDialog" timestamp="1619735422976">
+    <state x="716" y="189" key="com.intellij.ide.util.TipDialog" timestamp="1620394435717">
       <screen x="0" y="0" width="1360" height="728" />
     </state>
-    <state x="716" y="189" key="com.intellij.ide.util.TipDialog/0.0.1360.728@0.0.1360.728" timestamp="1619735422976" />
+    <state x="716" y="189" key="com.intellij.ide.util.TipDialog/0.0.1360.728@0.0.1360.728" timestamp="1620394435717" />
     <state x="478" y="54" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1618916136154">
       <screen x="0" y="0" width="1360" height="728" />
     </state>

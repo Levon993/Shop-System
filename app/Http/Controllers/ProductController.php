@@ -4,6 +4,7 @@
 namespace App\Http\Controllers;
 use App\Repositories\ProductRepository;
 use Illuminate\Http\Request;
+use App\Http\Requests\CreateProductRequest;
 
 class ProductController extends Controller
 {
@@ -14,14 +15,20 @@ class ProductController extends Controller
     {
         $this->productRepository = $p;
     }
+      public function search(Request $request)
+      {
+          $products = $this->productRepository->search($request);
+          return response()->json($products);
+      }
 
     public function index(Request $request)
     {
+
         $products = $this->productRepository->index($request);
         return response()->json($products);
     }
 
-    public function create(Request $request)
+    public function create(CreateProductRequest $request)
     {
        $result =  $this->productRepository->create($request);
        return response()->json($result);
