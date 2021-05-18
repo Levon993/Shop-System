@@ -22,6 +22,7 @@ class CreateCategoriesTAble extends Migration
             $table->tinyInteger('parent_id')->unsigned()->nullable();
             $table->string('keywords',255)->nullable();
             $table->string('description',255)->nullable();
+            $table->string('img',100)->nullable();
             $table->timestamps();
             $table->softDeletes();
 

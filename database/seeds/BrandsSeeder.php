@@ -14,38 +14,45 @@ class BrandsSeeder extends Seeder
         $data = [
             [
                 'id' => '1',
-                'title' => 'Casio',
-                'alias' => 'casio',
-                'img' => '884491528.jpg',
-                'description' => 'In sit amet sapien eros Integer dolore magna aliqua'
+                'title' => 'Простоквашино',
+                'alias' => 'prostokvashion',
+                'img' => 'prostokvashino.jpg',
+                'description' => 'Молочная продукция'
             ],
             [
                 'id' => '2',
-                'title' => 'Citizen',
+                'title' => 'Домик в деревне',
                 'alias' => 'citizen',
-                'img' => '884491528.jpg',
-                'description' => 'In sit amet sapien eros Integer dolore magna aliqua'
+                'img' => 'Mol_dom.jpg',
+                'description' => 'Молочная продукция'
             ],
             [
                 'id' => '3',
-                'title' => 'Royal London',
-                'alias' => 'royal-london',
-                'img' => '884491528.jpg',
-                'description' => 'In sit amet sapien eros Integer dolore magna aliqua'
+                'title' => 'ООО Яйца',
+                'alias' => 'eggs',
+                'img' => 'eggs.jpg',
+                'description' => 'Яйца'
             ],
             [
                 'id' => '4',
-                'title' => 'Seiko',
-                'alias' => 'seiko',
-                'img' => '884491528.jpg',
-                'description' => 'In sit amet sapien eros Integer dolore magna aliqua'
+                'title' => 'Coca Cola',
+                'alias' => 'Coca_Cola',
+                'img' => 'Coca_Cola.jpg',
+                'description' => 'Газированные напитки'
             ],
             [
                 'id' => '5',
-                'title' => 'Diesel',
-                'alias' => 'diesel',
-                'img' => '884491528.jpg',
-                'description' => 'In sit amet sapien eros Integer dolore magna aliqua'
+                'title' => 'Мистраль',
+                'alias' => 'mistral',
+                'img' => 'mistal.jpg',
+                'description' => 'Крупы'
+            ],
+            [
+                'id' => '6',
+                'title' => 'ООО Вода',
+                'alias' => 'water',
+                'img' => 'water.jpg',
+                'description' => 'Вода питевая'
             ],
 
         ];

@@ -12,22 +12,22 @@ class CategoriesSeeder extends Seeder
     public function run()
     {
         $data = [
-            ['id' => '1', 'title' => 'Men','alias' => 'men', 'parent_id' => '0', 'keywords' => 'Men', 'description' => 'Men'],
-            ['id' => '2', 'title' => 'Women','alias' => 'women', 'parent_id' => '0', 'keywords' => 'Women', 'description' => 'Women'],
-            ['id' => '3', 'title' => 'Kids','alias' => 'kids', 'parent_id' => '0', 'keywords' => 'Kids', 'description' => 'Kids'],
-            ['id' => '4', 'title' => 'Электронные','alias' => 'elektronnye', 'parent_id' => '1', 'keywords' => 'Электронные', 'description' => 'Электронные'],
-            ['id' => '5', 'title' => 'Механические','alias' => 'mehanicheskie', 'parent_id' => '1', 'keywords' => 'mehanicheskie', 'description' => 'mehanicheskie'],
-            ['id' => '6', 'title' => 'Casio','alias' => 'casio', 'parent_id' => '4', 'keywords' => 'Casio', 'description' => 'Casio'],
-            ['id' => '7', 'title' => 'Citizen','alias' => 'citizen', 'parent_id' => '4', 'keywords' => 'Citizen', 'description' => 'Citizen'],
-            ['id' => '8', 'title' => 'Royal London','alias' => 'royal-london', 'parent_id' => '5', 'keywords' => 'Royal London', 'description' => 'Royal London'],
-            ['id' => '9', 'title' => 'Seiko','alias' => 'seiko', 'parent_id' => '5', 'keywords' => 'Seiko', 'description' => 'Seiko'],
-            ['id' => '10', 'title' => 'Epos','alias' => 'epos', 'parent_id' => '5', 'keywords' => 'Epos', 'description' => 'Epos'],
-            ['id' => '11', 'title' => 'Электронные','alias' => 'elektronnye-11', 'parent_id' => '2', 'keywords' => 'Электронные', 'description' => 'Электронные'],
-            ['id' => '12', 'title' => 'Механические','alias' => 'mehanicheskie-12', 'parent_id' => '2', 'keywords' => 'Механические', 'description' => 'Механические'],
-            ['id' => '13', 'title' => 'Adriatica','alias' => 'adriatica', 'parent_id' => '11', 'keywords' => 'Adriatica', 'description' => 'Adriatica'],
-            ['id' => '14', 'title' => 'Anne Klein','alias' => 'nne-klein', 'parent_id' => '12', 'keywords' => 'Anne Klein', 'description' => 'Anne Klein'],
-            ['id' => '15', 'title' => 'Для девочек','alias' => 'girls', 'parent_id' => '3', 'keywords' => 'girls', 'description' => 'girls'],
-            ['id' => '16', 'title' => 'Для мальчиков','alias' => 'boys', 'parent_id' => '3', 'keywords' => 'boys', 'description' => 'boys'],
+            ['id' => '1', 'title' => 'Хлебобулочные изделия','alias' => 'bread', 'parent_id' => '0', 'keywords' => 'bread food', 'description' => 'Хлебобулочные изделия', 'img'=>'bread.png'],
+            ['id' => '2', 'title' => 'Крупы','alias' => 'cereals', 'parent_id' => '0', 'keywords' => 'cereals гречкаб мука  сахар чечевица', 'description' => 'Крупы', 'img'=>'Cereals.png'],
+            ['id' => '3', 'title' => 'Пивные напитки','alias' => 'beer', 'parent_id' => '0', 'keywords' => 'beer alkohol', 'description' => 'Пиво','img'=>'Beer.png'],
+            ['id' => '16', 'title' => 'Заморозка','alias' => 'frozen_food', 'parent_id' => '0', 'keywords' => 'Замороженная еда', 'description' => 'Замороженная еда','img'=>'snow.png'],
+            ['id' => '5', 'title' => 'Колбасные изделия','alias' => 'sousage', 'parent_id' => '0', 'keywords' => 'колбаса сосиск', 'description' => 'Колбасные изделия','img'=>'sousage.png'],
+            ['id' => '6', 'title' => 'Молочная продукция','alias' => 'milk', 'parent_id' => '0', 'keywords' => 'Молоко сыры йогурты кефиры', 'description' => 'Молочная продукция','img'=>'milk.png'],
+            ['id' => '7', 'title' => 'Корма для домашних питомцев','alias' => 'pet_food', 'parent_id' => '0', 'keywords' => 'Педигри Чаппи', 'description' => 'Корма для собак и кошек','img'=>'dog.png'],
+            ['id' => '8', 'title' => 'Корма для кошек','alias' => 'cat', 'parent_id' => '7', 'keywords' => 'Кошек кошка корм', 'description' => 'Корма для кошек','img'=>'cat.png'],
+            ['id' => '9', 'title' => 'Корма для собак','alias' => 'dog', 'parent_id' => '7', 'keywords' => 'Собака собаки корм chappi pedigri', 'description' => 'Корма для собак','img'=>'dog.png'],
+            ['id' => '10', 'title' => 'Фрукты','alias' => 'fruits', 'parent_id' => '0', 'keywords' => 'Яблоко бананы клубника апельсин', 'description' => 'Фрукты','img'=>'pineapple.png'],
+            ['id' => '11', 'title' => 'Сладости','alias' => 'sweet', 'parent_id' => '0', 'keywords' => 'Пахлава тотр кекс', 'description' => 'Сладости','img'=>'sweet.png'],
+            ['id' => '12', 'title' => 'Детское питание','alias' => 'child_food', 'parent_id' => '0', 'keywords' => 'Детское питание', 'description' => 'Детское питание','img'=>'child.png'],
+            ['id' => '13', 'title' => 'Бытовая химия','alias' => 'clear', 'parent_id' => '0', 'keywords' => 'бытовая химия', 'description' => 'Бытовая химия','img'=>'clear.png'],
+            ['id' => '14', 'title' => 'Стиральные порошки','alias' => 'washing_powder', 'parent_id' => '13', 'keywords' => 'washing powder ariel ', 'description' => 'Стиральные порошки','img'=>'washing_powder.png'],
+            ['id' => '15', 'title' => 'Средства для мытия посуды','alias' => 'washing_dishes', 'parent_id' => '13', 'keywords' => 'girls', 'description' => 'Средства для мытия посуды','img'=>'washing_dishes.png'],
+            ['id' => '4', 'title' => 'Соки и вода','alias' => 'water', 'parent_id' => '0', 'keywords' => 'water вода соки питеавя', 'description' => 'Питевая вода','img'=>'washing_dishes.png'],
 
         ];
 

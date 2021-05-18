@@ -33,5 +33,10 @@ class ProductController extends Controller
        $result =  $this->productRepository->create($request);
        return response()->json($result);
     }
+    public  function getByCategory(Request $request)
+    {
+        $result =  $this->productRepository->getByCategory($request);
+         return $result;
+    }
 
 }

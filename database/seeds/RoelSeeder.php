@@ -13,12 +13,15 @@ class RoelSeeder extends Seeder
     {
         $data = [
             [
+                'id' =>1,
                 'name' => 'disabled',
             ],
             [
+                'id' =>2,
                 'name' => 'user',
             ],
             [
+                'id' =>3,
                 'name' => 'admin',
             ],
         ];

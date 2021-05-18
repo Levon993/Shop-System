@@ -94,6 +94,11 @@ class ProductRepository extends CoreRepository implements ResourceInterface
         return $res->get();
     }
 
+    public  function getByCategory(Request $request)
+    {
+        $res = $this->startConditions()->with(['category','brand'])->where('category_id', $request->categoryId)->get();
+        return response()->json($res);
+    }
 
     public function destroy(Request $request)
     {

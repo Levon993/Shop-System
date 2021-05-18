@@ -16,13 +16,7 @@ class CreateUserRoleTable extends Migration
         $table->engine = 'InnoDB';
         $table->bigInteger('user_id')->unsigned();
         $table->bigInteger('role_id')->unsigned()->default(2);
-        $table->foreign('user_id')
-            ->references('id')->on('users')
-            ->onDelete('cascade')
-            ->onUpdate('cascade');
-        $table->foreign('role_id')
-            ->references('id')->on('roles')
-            ->onUpdate('cascade');
+
     });
     }
 
