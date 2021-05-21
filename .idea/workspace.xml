@@ -4,14 +4,10 @@
     <list default="true" id="2aec57e0-6373-4c62-a6c3-31c20ed95d6e" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/ProductController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/ProductController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/Product.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Product.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Repositories/ProductRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Repositories/ProductRepository.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2021_03_04_154849_create_categories_t_able.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2021_03_04_154849_create_categories_t_able.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2021_04_19_181040_create_user_role_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2021_04_19_181040_create_user_role_table.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/database/seeds/BrandsSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeds/BrandsSeeder.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/seeds/CategoriesSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeds/CategoriesSeeder.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/seeds/DatabaseSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeds/DatabaseSeeder.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/database/seeds/ProductsSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeds/ProductsSeeder.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/seeds/RoelSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeds/RoelSeeder.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/api.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/api.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -407,6 +403,20 @@
       <workItem from="1621357915897" duration="1363000" />
       <workItem from="1621368817693" duration="2373000" />
       <workItem from="1621372929303" duration="1408000" />
+      <workItem from="1621379178962" duration="249000" />
+      <workItem from="1621429454511" duration="2126000" />
+      <workItem from="1621445264284" duration="2054000" />
+      <workItem from="1621451691735" duration="1403000" />
+      <workItem from="1621456011849" duration="984000" />
+      <workItem from="1621462499104" duration="1929000" />
+      <workItem from="1621464441796" duration="1118000" />
+      <workItem from="1621514864527" duration="1898000" />
+      <workItem from="1621553382107" duration="1830000" />
+      <workItem from="1621555247277" duration="328000" />
+      <workItem from="1621605406460" duration="1644000" />
+      <workItem from="1621628857643" duration="1302000" />
+      <workItem from="1621630668800" duration="1781000" />
+      <workItem from="1621632486711" duration="1488000" />
     </task>
     <servers />
   </component>
@@ -422,10 +432,10 @@
       <screen x="0" y="0" width="1360" height="728" />
     </state>
     <state x="410" y="112" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1360.728@0.0.1360.728" timestamp="1615585837782" />
-    <state x="410" y="120" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1619022558136">
+    <state x="410" y="120" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1621451767280">
       <screen x="0" y="0" width="1360" height="728" />
     </state>
-    <state x="410" y="120" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1360.728@0.0.1360.728" timestamp="1619022558136" />
+    <state x="410" y="120" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1360.728@0.0.1360.728" timestamp="1621451767280" />
     <state x="364" y="20" width="645" height="688" key="#phpunit.xml" timestamp="1615464964435">
       <screen x="0" y="0" width="1360" height="728" />
     </state>
@@ -442,14 +452,14 @@
       <screen x="0" y="0" width="1360" height="728" />
     </state>
     <state width="617" height="446" key="SwitcherDM/0.0.1360.728@0.0.1360.728" timestamp="1615638375538" />
-    <state x="716" y="189" key="com.intellij.ide.util.TipDialog" timestamp="1621372929105">
+    <state x="716" y="189" key="com.intellij.ide.util.TipDialog" timestamp="1621634297959">
       <screen x="0" y="0" width="1360" height="728" />
     </state>
-    <state x="716" y="189" key="com.intellij.ide.util.TipDialog/0.0.1360.728@0.0.1360.728" timestamp="1621372929105" />
-    <state x="478" y="54" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1618916136154">
+    <state x="716" y="189" key="com.intellij.ide.util.TipDialog/0.0.1360.728@0.0.1360.728" timestamp="1621634297959" />
+    <state x="478" y="0" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1621606850416">
       <screen x="0" y="0" width="1360" height="728" />
     </state>
-    <state x="478" y="54" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/0.0.1360.728@0.0.1360.728" timestamp="1618916136154" />
+    <state x="478" y="0" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/0.0.1360.728@0.0.1360.728" timestamp="1621606850416" />
     <state x="336" y="162" key="run.anything.popup" timestamp="1621357942708">
       <screen x="0" y="0" width="1360" height="728" />
     </state>

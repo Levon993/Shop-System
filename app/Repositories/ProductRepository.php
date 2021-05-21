@@ -6,6 +6,7 @@ use Illuminate\Support\Facades\Storage;
 use App\Models\Product as Model;
 use Exception;
 use Illuminate\Http\Request;
+use App\Models\Choice;
 class ProductRepository extends CoreRepository implements ResourceInterface
 {
 
@@ -100,6 +101,27 @@ class ProductRepository extends CoreRepository implements ResourceInterface
         return response()->json($res);
     }
 
+    public function addToChoice(Request $request)
+    {
+        $res = $this->startConditions()::with('choices')->findOrFail($request->productId);
+        if ($res->choices === null)
+        {
+            $product = new Choice(['product_id' => $request->productId]);
+            $res->choices()->save($product);
+        }
+
+    }
+    public function getChoices()
+    {
+        $res = $this->startConditions()->with(['choices','category','brand'])->whereHas("choices")->paginate(5);
+        return $res ;
+    }
+    public function getChoicesForUser()
+    {
+        $res = $this->startConditions()->with(['choices','category','brand'])->whereHas("choices")->limit(8)->orderBy('id')->get();
+        return $res ;
+    }
+
     public function destroy(Request $request)
     {
         // TODO: Implement destroy() method.
@@ -107,6 +129,20 @@ class ProductRepository extends CoreRepository implements ResourceInterface
 
     public function update(Request $request)
     {
-        // TODO: Implement update() method.
+
+       $res = $this->startConditions()->where('id', $request->product['id'])->update(
+       [
+           'title' => $request->product['title'],
+           'alias' => $request->product['alias'],
+           'category_id' => $request->product['category_id'],
+           'brand_id' => $request->product['brand_id'],
+           'price' => $request->product['price'],
+           'old_price' => $request->product['old_price'],
+           'status' => $request->product['status'],
+           'keywords' => $request->product['keywords'],
+           'description' => $request->product['description'],
+       ]
+       );
+       return response()->json($res);
     }
 }

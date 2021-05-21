@@ -6,6 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 use App\Models\Category;
 use App\Models\Brand;
 use App\Models\Offer;
+use App\Models\Choice;
 
 class Product extends Model
 {
@@ -21,6 +22,11 @@ class Product extends Model
     public function offer()
     {
         return $this->belongsToMany(Offer::class,'products_offer','product_id', 'offer_id');
+    }
+
+    public function choices()
+    {
+        return $this->hasOne(Choice::class,'product_id');
     }
 
 }

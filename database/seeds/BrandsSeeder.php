@@ -50,7 +50,21 @@ class BrandsSeeder extends Seeder
             [
                 'id' => '6',
                 'title' => 'ООО Вода',
-                'alias' => 'water',
+                'alias' => 'water1',
+                'img' => 'water.jpg',
+                'description' => 'Вода питевая'
+            ],
+            [
+                'id' => '7',
+                'title' => 'Вода',
+                'alias' => 'water2',
+                'img' => 'water.jpg',
+                'description' => 'Вода питевая'
+            ],
+            [
+                'id' => '8',
+                'title' => 'Пиво',
+                'alias' => 'water3',
                 'img' => 'water.jpg',
                 'description' => 'Вода питевая'
             ],
