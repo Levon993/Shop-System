@@ -18,7 +18,7 @@ class OrderTableSeeder extends Seeder
                 'user_id' => $i,
                 'status' => '0',
                 'created_at' => date('Y-m-d'),
-                'currency' => 'USD',
+                'currency' => 'RUB',
                 'note' => 'Note',
 
             ];

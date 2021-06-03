@@ -7,6 +7,7 @@ use App\Models\Product as Model;
 use Exception;
 use Illuminate\Http\Request;
 use App\Models\Choice;
+use App\Models\Discount;
 class ProductRepository extends CoreRepository implements ResourceInterface
 {
 
@@ -18,9 +19,8 @@ class ProductRepository extends CoreRepository implements ResourceInterface
     public function index(Request $request)
     {
 
+            $products = $this->startConditions()::with(['category','brand'])->paginate(20);
 
-
-        $products = $this->startConditions()::with(['category','brand'])->paginate(5);
         return $products;
     }
 
@@ -109,11 +109,11 @@ class ProductRepository extends CoreRepository implements ResourceInterface
             $product = new Choice(['product_id' => $request->productId]);
             $res->choices()->save($product);
         }
-
     }
+
     public function getChoices()
     {
-        $res = $this->startConditions()->with(['choices','category','brand'])->whereHas("choices")->paginate(5);
+        $res = $this->startConditions()->with(['choices','category','brand'])->whereHas("choices")->paginate(20);
         return $res ;
     }
     public function getChoicesForUser()
@@ -121,7 +121,27 @@ class ProductRepository extends CoreRepository implements ResourceInterface
         $res = $this->startConditions()->with(['choices','category','brand'])->whereHas("choices")->limit(8)->orderBy('id')->get();
         return $res ;
     }
+    public function addToDiscount(Request $request)
+    {
+        $res = $this->startConditions()::with('discount')->findOrFail($request->productId);
+        if ($res->discount === null)
+        {
+            $product = new Discount(['product_id' => $request->productId]);
+            $res->discount()->save($product);
+            return response()->json(['message' => 'Successfully added']);
 
+        }
+    }
+    public function getDiscounts()
+    {
+        $res = $this->startConditions()->with(['discount','category','brand'])->whereHas("discount")->paginate(20);
+        return $res ;
+    }
+    public function getDiscountsForUsers()
+    {
+        $res = $this->startConditions()->with(['discount','category','brand'])->whereHas("discount")->limit(8)->orderBy('id','DESC')->get();
+        return $res ;
+    }
     public function destroy(Request $request)
     {
         // TODO: Implement destroy() method.

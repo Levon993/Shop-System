@@ -3,10 +3,18 @@
   <component name="ChangeListManager">
     <list default="true" id="2aec57e0-6373-4c62-a6c3-31c20ed95d6e" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/CategoryController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/CategoryController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/OrderController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/OrderController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/ProductController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/ProductController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/Order.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Order.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Models/Product.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Product.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Repositories/CategoryRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Repositories/CategoryRepository.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Repositories/OfferRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Repositories/OfferRepository.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Repositories/OrderRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Repositories/OrderRepository.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Repositories/ProductRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Repositories/ProductRepository.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/seeds/BrandsSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeds/BrandsSeeder.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2021_03_04_154315_create_orders_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2021_03_04_154315_create_orders_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/seeds/AdminOrderProductsSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeds/AdminOrderProductsSeeder.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/seeds/OrderTableSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeds/OrderTableSeeder.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/database/seeds/ProductsSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeds/ProductsSeeder.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/api.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/api.php" afterDir="false" />
     </list>
@@ -417,6 +425,35 @@
       <workItem from="1621628857643" duration="1302000" />
       <workItem from="1621630668800" duration="1781000" />
       <workItem from="1621632486711" duration="1488000" />
+      <workItem from="1621634298526" duration="688000" />
+      <workItem from="1621692910914" duration="1781000" />
+      <workItem from="1621694715283" duration="1134000" />
+      <workItem from="1621705257450" duration="1836000" />
+      <workItem from="1621707124223" duration="936000" />
+      <workItem from="1621721018936" duration="1670000" />
+      <workItem from="1621727986086" duration="742000" />
+      <workItem from="1621776261954" duration="1676000" />
+      <workItem from="1621802069581" duration="1070000" />
+      <workItem from="1621868345087" duration="2129000" />
+      <workItem from="1621874249105" duration="601000" />
+      <workItem from="1621886895904" duration="1160000" />
+      <workItem from="1621944347819" duration="1162000" />
+      <workItem from="1621956864109" duration="659000" />
+      <workItem from="1622241306565" duration="862000" />
+      <workItem from="1622307476743" duration="632000" />
+      <workItem from="1622314069545" duration="1781000" />
+      <workItem from="1622315878123" duration="641000" />
+      <workItem from="1622583665752" duration="2131000" />
+      <workItem from="1622586589378" duration="1464000" />
+      <workItem from="1622589460151" duration="1639000" />
+      <workItem from="1622593533203" duration="1324000" />
+      <workItem from="1622638754196" duration="2313000" />
+      <workItem from="1622641428467" duration="1421000" />
+      <workItem from="1622655397095" duration="1081000" />
+      <workItem from="1622664495119" duration="2164000" />
+      <workItem from="1622722089886" duration="597000" />
+      <workItem from="1622745715828" duration="1739000" />
+      <workItem from="1622757101188" duration="1788000" />
     </task>
     <servers />
   </component>
@@ -432,10 +469,10 @@
       <screen x="0" y="0" width="1360" height="728" />
     </state>
     <state x="410" y="112" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1360.728@0.0.1360.728" timestamp="1615585837782" />
-    <state x="410" y="120" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1621451767280">
+    <state x="410" y="120" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1622665278770">
       <screen x="0" y="0" width="1360" height="728" />
     </state>
-    <state x="410" y="120" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1360.728@0.0.1360.728" timestamp="1621451767280" />
+    <state x="410" y="120" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1360.728@0.0.1360.728" timestamp="1622665278770" />
     <state x="364" y="20" width="645" height="688" key="#phpunit.xml" timestamp="1615464964435">
       <screen x="0" y="0" width="1360" height="728" />
     </state>
@@ -452,10 +489,10 @@
       <screen x="0" y="0" width="1360" height="728" />
     </state>
     <state width="617" height="446" key="SwitcherDM/0.0.1360.728@0.0.1360.728" timestamp="1615638375538" />
-    <state x="716" y="189" key="com.intellij.ide.util.TipDialog" timestamp="1621634297959">
+    <state x="716" y="189" key="com.intellij.ide.util.TipDialog" timestamp="1622757101183">
       <screen x="0" y="0" width="1360" height="728" />
     </state>
-    <state x="716" y="189" key="com.intellij.ide.util.TipDialog/0.0.1360.728@0.0.1360.728" timestamp="1621634297959" />
+    <state x="716" y="189" key="com.intellij.ide.util.TipDialog/0.0.1360.728@0.0.1360.728" timestamp="1622757101183" />
     <state x="478" y="0" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1621606850416">
       <screen x="0" y="0" width="1360" height="728" />
     </state>
@@ -468,5 +505,16 @@
       <screen x="0" y="0" width="1360" height="728" />
     </state>
     <state x="343" y="49" width="672" height="678" key="search.everywhere.popup/0.0.1360.728@0.0.1360.728" timestamp="1615226511857" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="php">
+          <url>file://$PROJECT_DIR$/app/Repositories/ProductRepository.php</url>
+          <line>105</line>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

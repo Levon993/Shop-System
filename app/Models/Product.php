@@ -2,11 +2,12 @@
 
 namespace App\Models;
 
+use App\Models\Choice;
 use Illuminate\Database\Eloquent\Model;
 use App\Models\Category;
 use App\Models\Brand;
 use App\Models\Offer;
-use App\Models\Choice;
+use App\Models\Discount;
 
 class Product extends Model
 {
@@ -24,9 +25,13 @@ class Product extends Model
         return $this->belongsToMany(Offer::class,'products_offer','product_id', 'offer_id');
     }
 
-    public function choices()
+     public function choices()
     {
         return $this->hasOne(Choice::class,'product_id');
+    }
+    public function discount()
+    {
+        return $this->hasOne(Discount::class,'product_id');
     }
 
 }

@@ -25,9 +25,15 @@ class OrderController extends Controller
         $orders = $this->OrderRepository->index($request);
         return response()->json($orders);
     }
+    public function NonRegisterIndex(Request $request)
+    {
+        $orders = $this->OrderRepository->NonRegisterIndex($request);
+        return response()->json($orders);
+    }
 
     public function create(Request $request)
     {
-
+        $orders = $this->OrderRepository->create($request);
+        return response()->json($orders);
     }
 }

@@ -2,6 +2,7 @@
 
 
 namespace App\Http\Controllers;
+use App\Models\Discount;
 use App\Repositories\ProductRepository;
 use Illuminate\Http\Request;
 use App\Http\Requests\CreateProductRequest;
@@ -43,16 +44,31 @@ class ProductController extends Controller
         $result =  $this->productRepository->addToChoice($request);
         return $result;
     }
+
     public function getChoices()
     {
         $res =  $result =  $this->productRepository->getChoices();
         return  response()->json($res);
     }
-
+    public function getDiscounts()
+    {
+        $res =  $result =  $this->productRepository->getDiscounts();
+        return  response()->json($res);
+    }
+    public function getDiscountsForUsers()
+    {
+        $res =  $result =  $this->productRepository->getDiscountsForUsers();
+        return  response()->json($res);
+    }
     public function getChoicesForUser()
     {
         $res =  $result =  $this->productRepository->getChoicesForUser();
         return  response()->json($res);
+    }
+    public function addToDiscount(Request $request)
+    {
+        $result =  $this->productRepository->addToDiscount($request);
+        return $result;
     }
     public function update(Request $request)
     {

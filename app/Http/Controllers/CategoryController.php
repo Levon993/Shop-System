@@ -20,7 +20,12 @@ class CategoryController extends Controller
         $data = $this->categoryRepoitory->index($request);
         return response()->json($data);
     }
+     public function CategoryWithProducts()
+     {
+         $data = $this->categoryRepoitory->CategoryWithProducts();
 
+        return response()->json($data);
+     }
     public function create(Request $request)
     {
         $this->categoryRepoitory->create($request);

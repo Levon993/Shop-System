@@ -20,7 +20,7 @@ class AdminOrderProductsSeeder extends Seeder
                     'order_id' => $y,
                     'product_id' => $i,
                     'qty' => rand(1,4),
-                    'title' => 'Casio Test Prod',
+                    'title' => 'Test Prod',
                     'price' => rand(40,200),
                 ];
             }

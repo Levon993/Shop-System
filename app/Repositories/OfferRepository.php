@@ -21,7 +21,7 @@ class OfferRepository extends CoreRepository implements ResourceInterface
 
     public function create(Request $request)
     {
-        try {
+        //try {
             $request->validate([
                 'title' => 'required|min:3|max:100|string',
                 'products_id' => 'required',
@@ -51,10 +51,10 @@ class OfferRepository extends CoreRepository implements ResourceInterface
             $newOffer->save();
             $newOffer->products()->attach($products);
             return response()->json(['message'=>"Предложение Успешно Сохранено"]);
-        }catch (Exception $e)
-        {
-            return response()->json(['message'=>"Произошла Ошибка"]);
-        }
+//        }catch (Exception $e)
+//        {
+//            return response()->json(['message'=>"Произошла Ошибка"]);
+//        }
 
 
 

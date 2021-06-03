@@ -17,6 +17,12 @@ class CategoryRepository extends CoreRepository implements ResourceInterface
 
         return $categories;
     }
+    public function CategoryWithProducts()
+    {
+        $categories = $this->startConditions()::with(['children','parent','product'])->get();
+
+        return $categories;
+    }
 
     public function create(Request $request)
     {
