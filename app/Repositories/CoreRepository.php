@@ -17,9 +17,6 @@ abstract class CoreRepository
         return clone $this->model;
     }
 
-    public function getById($id){
-        return $this->startConditions()->find($id);
-    }
 
     public function count(){
         return $this->startConditions()->count();

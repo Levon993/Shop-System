@@ -30,9 +30,12 @@ Route::post('/categories/destroy', 'CategoryController@destroy')->middleware(['a
 
 Route::post('/products/create', 'ProductController@create')->middleware(['auth:api']);
 Route::post('/products/index', 'ProductController@index');//->middleware(['auth:api']);
-Route::post('/products/search', 'ProductController@search')->middleware(['auth:api']);
+Route::post('/products/search', 'ProductController@search');//->middleware(['auth:api']);
 Route::post('/products/destroy', 'ProductController@destroy')->middleware(['auth:api']);
-Route::post('/products/getByCategory', 'ProductController@getByCategory')->middleware(['auth:api']);
+Route::post('/products/getByCategory', 'ProductController@getByCategory');
+Route::post('/products/recomended', 'ProductController@recomended');
+Route::post('/products/hits', 'ProductController@hits');
+Route::post('/products/getById', 'ProductController@getById');//->middleware(['auth:api']);
 Route::post('/products/update', 'ProductController@update')->middleware(['auth:api']);
 Route::post('/products/addToChoice', 'ProductController@addToChoice')->middleware(['auth:api']);
 Route::post('/products/getChoices', 'ProductController@getChoices');//->middleware(['auth:api']);

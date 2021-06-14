@@ -39,6 +39,21 @@ class ProductController extends Controller
         $result =  $this->productRepository->getByCategory($request);
          return $result;
     }
+    public  function recomended(Request $request)
+    {
+        $result =  $this->productRepository->recomended($request);
+        return $result;
+    }
+    public function hits(Request $request)
+    {
+        $result =  $this->productRepository->hits($request);
+        return $result;
+    }
+    public function getById(Request $request)
+    {
+        $result =  $this->productRepository->getById($request->id);
+        return response()->json($result);
+    }
     public function addToChoice(Request $request)
     {
         $result =  $this->productRepository->addToChoice($request);

@@ -3,19 +3,9 @@
   <component name="ChangeListManager">
     <list default="true" id="2aec57e0-6373-4c62-a6c3-31c20ed95d6e" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/CategoryController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/CategoryController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/OrderController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/OrderController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/ProductController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/ProductController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/Order.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Order.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/Product.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Product.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Repositories/CategoryRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Repositories/CategoryRepository.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Repositories/OfferRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Repositories/OfferRepository.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Repositories/OrderRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Repositories/OrderRepository.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Repositories/CoreRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Repositories/CoreRepository.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Repositories/ProductRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Repositories/ProductRepository.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2021_03_04_154315_create_orders_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2021_03_04_154315_create_orders_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/seeds/AdminOrderProductsSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeds/AdminOrderProductsSeeder.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/seeds/OrderTableSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeds/OrderTableSeeder.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/seeds/ProductsSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeds/ProductsSeeder.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/api.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/api.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -454,6 +444,14 @@
       <workItem from="1622722089886" duration="597000" />
       <workItem from="1622745715828" duration="1739000" />
       <workItem from="1622757101188" duration="1788000" />
+      <workItem from="1622759691135" duration="152000" />
+      <workItem from="1622835408464" duration="1709000" />
+      <workItem from="1623248122714" duration="1696000" />
+      <workItem from="1623586437950" duration="1862000" />
+      <workItem from="1623588354948" duration="1188000" />
+      <workItem from="1623607212425" duration="1903000" />
+      <workItem from="1623659902705" duration="789000" />
+      <workItem from="1623661783735" duration="324000" />
     </task>
     <servers />
   </component>
@@ -489,10 +487,10 @@
       <screen x="0" y="0" width="1360" height="728" />
     </state>
     <state width="617" height="446" key="SwitcherDM/0.0.1360.728@0.0.1360.728" timestamp="1615638375538" />
-    <state x="716" y="189" key="com.intellij.ide.util.TipDialog" timestamp="1622757101183">
+    <state x="716" y="189" key="com.intellij.ide.util.TipDialog" timestamp="1623661782964">
       <screen x="0" y="0" width="1360" height="728" />
     </state>
-    <state x="716" y="189" key="com.intellij.ide.util.TipDialog/0.0.1360.728@0.0.1360.728" timestamp="1622757101183" />
+    <state x="716" y="189" key="com.intellij.ide.util.TipDialog/0.0.1360.728@0.0.1360.728" timestamp="1623661782964" />
     <state x="478" y="0" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1621606850416">
       <screen x="0" y="0" width="1360" height="728" />
     </state>
@@ -505,16 +503,5 @@
       <screen x="0" y="0" width="1360" height="728" />
     </state>
     <state x="343" y="49" width="672" height="678" key="search.everywhere.popup/0.0.1360.728@0.0.1360.728" timestamp="1615226511857" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="php">
-          <url>file://$PROJECT_DIR$/app/Repositories/ProductRepository.php</url>
-          <line>105</line>
-          <option name="timeStamp" value="2" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
 </project>

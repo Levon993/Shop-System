@@ -62,15 +62,20 @@ class ProductRepository extends CoreRepository implements ResourceInterface
 
     public function search(Request $request)
     {
+    //    return $request->all();
         $res = $this->startConditions()->with(['category','brand']);
         $category = $request->category;
         $title =  $request->title;
         $brand =  $request->brand;
         $price =  $request->price;
-
+        $description = $request->description;
         if ($title)
         {
             $res->where('title','like','%'.$title.'%');
+        }
+        if ($description)
+        {
+            $res->where('description','like','%'.$description.'%');
         }
         if ($price)
         {
@@ -99,6 +104,28 @@ class ProductRepository extends CoreRepository implements ResourceInterface
     {
         $res = $this->startConditions()->with(['category','brand'])->where('category_id', $request->categoryId)->get();
         return response()->json($res);
+    }
+    public  function recomended(Request $request)
+    {
+
+        $res = $this->startConditions()->with(['category','brand'])
+            ->where('category_id', $request->data['category_id'])
+            ->where('id','!=',$request->data['id'])
+            ->OrWhere('brand_id', $request->data['brand_id'])
+            ->OrWhere('price', $request->dat['price'])
+            ->paginate(8);
+        return response()->json($res);
+    }
+
+    public function hits(Request $request)
+    {
+        $res = $this->startConditions()->with('category')->where('hit','=','1')->paginate(10);
+        return response()->json($res);
+    }
+
+    public function getById($id)
+    {
+        return $this->startConditions()->with('category')->find($id);
     }
 
     public function addToChoice(Request $request)
